@@ -1,0 +1,170 @@
+{
+  "01": {
+    "nom": "Tanger-Tétouan-Al Hoceïma",
+    "population": 3556729,
+    "superficie": 17262,
+    "densite": 206,
+    "chef_lieu": "Tanger",
+    "communes": [
+      {"nom": "Tanger", "population": 947952},
+      {"nom": "Tétouan", "population": 380787},
+      {"nom": "Al Hoceïma", "population": 105174},
+      {"nom": "Larache", "population": 125008},
+      {"nom": "Chefchaouen", "population": 42786}
+    ]
+  },
+  "02": {
+    "nom": "L'Oriental",
+    "population": 2314346,
+    "superficie": 90127,
+    "densite": 26,
+    "chef_lieu": "Oujda",
+    "communes": [
+      {"nom": "Oujda", "population": 494252},
+      {"nom": "Nador", "population": 161726},
+      {"nom": "Berkane", "population": 109237},
+      {"nom": "Taourirt", "population": 80024},
+      {"nom": "Jerada", "population": 43506}
+    ]
+  },
+  "03": {
+    "nom": "Fès-Meknès",
+    "population": 4236892,
+    "superficie": 40075,
+    "densite": 106,
+    "chef_lieu": "Fès",
+    "communes": [
+      {"nom": "Fès", "population": 1112072},
+      {"nom": "Meknès", "population": 632079},
+      {"nom": "Taza", "population": 141890},
+      {"nom": "Sefrou", "population": 79887},
+      {"nom": "Ifrane", "population": 73782}
+    ]
+  },
+  "04": {
+    "nom": "Rabat-Salé-Kénitra",
+    "population": 4580866,
+    "superficie": 18194,
+    "densite": 252,
+    "chef_lieu": "Rabat",
+    "communes": [
+      {"nom": "Salé", "population": 890403},
+      {"nom": "Rabat", "population": 577827},
+      {"nom": "Kénitra", "population": 431282},
+      {"nom": "Témara", "population": 313510},
+      {"nom": "Sidi Slimane", "population": 92989}
+    ]
+  },
+  "05": {
+    "nom": "Béni Mellal-Khénifra",
+    "population": 2520776,
+    "superficie": 28374,
+    "densite": 89,
+    "chef_lieu": "Béni Mellal",
+    "communes": [
+      {"nom": "Béni Mellal", "population": 192676},
+      {"nom": "Khouribga", "population": 196715},
+      {"nom": "Khénifra", "population": 117510},
+      {"nom": "Azilal", "population": 27719},
+      {"nom": "Fquih Ben Salah", "population": 114010}
+    ]
+  },
+  "06": {
+    "nom": "Casablanca-Settat",
+    "population": 6862140,
+    "superficie": 20166,
+    "densite": 340,
+    "chef_lieu": "Casablanca",
+    "communes": [
+      {"nom": "Casablanca", "population": 3359818},
+      {"nom": "Mohammedia", "population": 208612},
+      {"nom": "El Jadida", "population": 194934},
+      {"nom": "Settat", "population": 142250},
+      {"nom": "Berrechid", "population": 136634}
+    ]
+  },
+  "07": {
+    "nom": "Marrakech-Safi",
+    "population": 4520569,
+    "superficie": 39167,
+    "densite": 115,
+    "chef_lieu": "Marrakech",
+    "communes": [
+      {"nom": "Marrakech", "population": 928850},
+      {"nom": "Safi", "population": 308508},
+      {"nom": "Essaouira", "population": 77966},
+      {"nom": "Youssoufia", "population": 67628},
+      {"nom": "Chichaoua", "population": 15367}
+    ]
+  },
+  "08": {
+    "nom": "Drâa-Tafilalet",
+    "population": 1655623,
+    "superficie": 88836,
+    "densite": 19,
+    "chef_lieu": "Errachidia",
+    "communes": [
+      {"nom": "Errachidia", "population": 427572},
+      {"nom": "Ouarzazate", "population": 304932},
+      {"nom": "Tinghir", "population": 323805},
+      {"nom": "Zagora", "population": 285545},
+      {"nom": "Midelt", "population": 313769}
+    ]
+  },
+  "09": {
+    "nom": "Souss-Massa",
+    "population": 3020431,
+    "superficie": 53789,
+    "densite": 56,
+    "chef_lieu": "Agadir",
+    "communes": [
+      {"nom": "Agadir-Ida-Ou-Tanane", "population": 721431},
+      {"nom": "Inezgane-Aït Melloul", "population": 636916},
+      {"nom": "Taroudannt", "population": 858162},
+      {"nom": "Tiznit", "population": 198542},
+      {"nom": "Chtouka-Aït Baha", "population": 493623},
+      {"nom": "Tata", "population": 111757}
+    ]
+  },
+  "10": {
+    "nom": "Guelmim-Oued Noun",
+    "population": 448685,
+    "superficie": 46108,
+    "densite": 10,
+    "chef_lieu": "Guelmim",
+    "communes": [
+      {"nom": "Guelmim", "population": 196267},
+      {"nom": "Tan-Tan", "population": 94519},
+      {"nom": "Sidi Ifni", "population": 104601},
+      {"nom": "Assa-Zag", "population": 53298}
+    ]
+  },
+  "11": {
+    "nom": "Laâyoune-Sakia El Hamra",
+    "population": 367758,
+    "superficie": 140018,
+    "densite": 3,
+    "chef_lieu": "Laâyoune",
+    "communes": [
+      {"nom": "Laâyoune", "population": 217732},
+      {"nom": "Boujdour", "population": 46102},
+      {"nom": "Es-Semara", "population": 57035},
+      {"nom": "Tarfaya", "population": 8027},
+      {"nom": "El Marsa", "population": 16852}
+    ]
+  },
+  "12": {
+    "nom": "Dakhla-Oued Ed-Dahab",
+    "population": 142955,
+    "superficie": 130898,
+    "densite": 1,
+    "chef_lieu": "Dakhla",
+    "communes": [
+      {"nom": "Dakhla", "population": 106277},
+      {"nom": "Aousserd", "population": 16643},
+      {"nom": "Bir Gandouz", "population": 5035},
+      {"nom": "El Argoub", "population": 8732},
+      {"nom": "Lagouira", "population": 6268}
+    ]
+  }
+}

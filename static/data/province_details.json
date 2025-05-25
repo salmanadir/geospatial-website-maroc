@@ -1,0 +1,838 @@
+{
+  "Tanger-Assilah": {
+    "region": "Tanger-Tétouan-Al Hoceïma",
+    "population": 1494413,
+    "superficie": 1195,
+    "densite": 1250,
+    "chef_lieu": "Tanger",
+    "coordinates": {
+      "lat": 35.7595,
+      "lon": -5.834
+    }
+  },
+  "Mdiq-Fnidq": {
+    "region": "Tanger-Tétouan-Al Hoceïma",
+    "population": 254064,
+    "superficie": 175,
+    "densite": 1452,
+    "chef_lieu": "M'diq",
+    "coordinates": {
+      "lat": 35.6839,
+      "lon": -5.3213
+    }
+  },
+  "Tetouan": {
+    "region": "Tanger-Tétouan-Al Hoceïma",
+    "population": 611928,
+    "superficie": 2448,
+    "densite": 250,
+    "chef_lieu": "Tétouan",
+    "coordinates": {
+      "lat": 35.5889,
+      "lon": -5.3626
+    }
+  },
+  "Fahs-Anjra": {
+    "region": "Tanger-Tétouan-Al Hoceïma",
+    "population": 100789,
+    "superficie": 799,
+    "densite": 126,
+    "chef_lieu": "Tleta de Beni Ouaddar",
+    "coordinates": {
+      "lat": 35.7619,
+      "lon": -5.5598
+    }
+  },
+  "Larache": {
+    "region": "Tanger-Tétouan-Al Hoceïma",
+    "population": 510211,
+    "superficie": 2683,
+    "densite": 190,
+    "chef_lieu": "Larache",
+    "coordinates": {
+      "lat": 35.1914,
+      "lon": -6.1567
+    }
+  },
+  "Al-Hoceima": {
+    "region": "Tanger-Tétouan-Al Hoceïma",
+    "population": 371527,
+    "superficie": 3550,
+    "densite": 105,
+    "chef_lieu": "Al Hoceïma",
+    "coordinates": {
+      "lat": 35.2518,
+      "lon": -3.9372
+    }
+  },
+  "Chefchaouen": {
+    "region": "Tanger-Tétouan-Al Hoceïma",
+    "population": 412713,
+    "superficie": 4350,
+    "densite": 95,
+    "chef_lieu": "Chefchaouen",
+    "coordinates": {
+      "lat": 35.1688,
+      "lon": -5.2636
+    }
+  },
+  "Ouezzane": {
+    "region": "Tanger-Tétouan-Al Hoceïma",
+    "population": 274577,
+    "superficie": 1660,
+    "densite": 165,
+    "chef_lieu": "Ouezzane",
+    "coordinates": {
+      "lat": 34.7956,
+      "lon": -5.5782
+    }
+  },
+  "Oujda-Angad": {
+    "region": "L'Oriental",
+    "population": 572454,
+    "superficie": 1714,
+    "densite": 334,
+    "chef_lieu": "Oujda",
+    "coordinates": {
+      "lat": 34.6805,
+      "lon": -1.9112
+    }
+  },
+  "Nador": {
+    "region": "L'Oriental",
+    "population": 565987,
+    "superficie": 3033,
+    "densite": 187,
+    "chef_lieu": "Nador",
+    "coordinates": {
+      "lat": 35.1667,
+      "lon": -2.9333
+    }
+  },
+  "Driouch": {
+    "region": "L'Oriental",
+    "population": 188191,
+    "superficie": 2867,
+    "densite": 66,
+    "chef_lieu": "Driouch",
+    "coordinates": {
+      "lat": 34.9764,
+      "lon": -3.3976
+    }
+  },
+  "Jerada": {
+    "region": "L'Oriental",
+    "population": 103527,
+    "superficie": 9590,
+    "densite": 11,
+    "chef_lieu": "Jerada",
+    "coordinates": {
+      "lat": 34.31,
+      "lon": -2.18
+    }
+  },
+  "Berkane": {
+    "region": "L'Oriental",
+    "population": 284061,
+    "superficie": 1985,
+    "densite": 143,
+    "chef_lieu": "Berkane",
+    "coordinates": {
+      "lat": 34.92,
+      "lon": -2.32
+    }
+  },
+  "Taourirt": {
+    "region": "L'Oriental",
+    "population": 220157,
+    "superficie": 8541,
+    "densite": 26,
+    "chef_lieu": "Taourirt",
+    "coordinates": {
+      "lat": 34.41,
+      "lon": -2.89
+    }
+  },
+  "Guercif": {
+    "region": "L'Oriental",
+    "population": 215837,
+    "superficie": 7310,
+    "densite": 30,
+    "chef_lieu": "Guercif",
+    "coordinates": {
+      "lat": 34.2256,
+      "lon": -3.3532
+    }
+  },
+  "Figuig": {
+    "region": "L'Oriental",
+    "population": 144451,
+    "superficie": 55990,
+    "densite": 3,
+    "chef_lieu": "Figuig",
+    "coordinates": {
+      "lat": 32.11,
+      "lon": -1.23
+    }
+  },
+  "Fes": {
+    "region": "Fès-Meknès",
+    "population": 1256172,
+    "superficie": 3274,
+    "densite": 384,
+    "chef_lieu": "Fès",
+    "coordinates": {
+      "lat": 34.0333,
+      "lon": -5.0
+    }
+  },
+  "Meknes": {
+    "region": "Fès-Meknès",
+    "population": 942945,
+    "superficie": 4013,
+    "densite": 235,
+    "chef_lieu": "Meknès",
+    "coordinates": {
+      "lat": 33.8833,
+      "lon": -5.55
+    }
+  },
+  "El-Hajeb": {
+    "region": "Fès-Meknès",
+    "population": 267156,
+    "superficie": 2210,
+    "densite": 121,
+    "chef_lieu": "El Hajeb",
+    "coordinates": {
+      "lat": 33.69,
+      "lon": -5.37
+    }
+  },
+  "Ifrane": {
+    "region": "Fès-Meknès",
+    "population": 160904,
+    "superficie": 3573,
+    "densite": 45,
+    "chef_lieu": "Ifrane",
+    "coordinates": {
+      "lat": 33.5333,
+      "lon": -5.1
+    }
+  },
+  "Moulay-Yacoub": {
+    "region": "Fès-Meknès",
+    "population": 216954,
+    "superficie": 1700,
+    "densite": 128,
+    "chef_lieu": "Moulay Yacoub",
+    "coordinates": {
+      "lat": 34.0872,
+      "lon": -5.1792
+    }
+  },
+  "Sefrou": {
+    "region": "Fès-Meknès",
+    "population": 304748,
+    "superficie": 4000,
+    "densite": 76,
+    "chef_lieu": "Sefrou",
+    "coordinates": {
+      "lat": 33.83,
+      "lon": -4.83
+    }
+  },
+  "Boulemane": {
+    "region": "Fès-Meknès",
+    "population": 205411,
+    "superficie": 14395,
+    "densite": 14,
+    "chef_lieu": "Boulemane",
+    "coordinates": {
+      "lat": 33.3628,
+      "lon": -4.73
+    }
+  },
+  "Taounate": {
+    "region": "Fès-Meknès",
+    "population": 612650,
+    "superficie": 5585,
+    "densite": 110,
+    "chef_lieu": "Taounate",
+    "coordinates": {
+      "lat": 34.54,
+      "lon": -4.64
+    }
+  },
+  "Taza": {
+    "region": "Fès-Meknès",
+    "population": 500971,
+    "superficie": 5125,
+    "densite": 98,
+    "chef_lieu": "Taza",
+    "coordinates": {
+      "lat": 34.21,
+      "lon": -4.01
+    }
+  },
+  "Rabat": {
+    "region": "Rabat-Salé-Kénitra",
+    "population": 515619,
+    "superficie": 118,
+    "densite": 4370,
+    "chef_lieu": "Rabat",
+    "coordinates": {
+      "lat": 34.0209,
+      "lon": -6.8416
+    }
+  },
+  "Sale": {
+    "region": "Rabat-Salé-Kénitra",
+    "population": 1089554,
+    "superficie": 672,
+    "densite": 1622,
+    "chef_lieu": "Salé",
+    "coordinates": {
+      "lat": 34.0531,
+      "lon": -6.7986
+    }
+  },
+  "Skhirate--Temara": {
+    "region": "Rabat-Salé-Kénitra",
+    "population": 783475,
+    "superficie": 485,
+    "densite": 1615,
+    "chef_lieu": "Témara",
+    "coordinates": {
+      "lat": 33.9292,
+      "lon": -6.9069
+    }
+  },
+  "Kenitra": {
+    "region": "Rabat-Salé-Kénitra",
+    "population": 1284247,
+    "superficie": 3242,
+    "densite": 396,
+    "chef_lieu": "Kénitra",
+    "coordinates": {
+      "lat": 34.26,
+      "lon": -6.58
+    }
+  },
+  "Khemisset": {
+    "region": "Rabat-Salé-Kénitra",
+    "population": 563036,
+    "superficie": 8305,
+    "densite": 68,
+    "chef_lieu": "Khémisset",
+    "coordinates": {
+      "lat": 33.82,
+      "lon": -6.07
+    }
+  },
+  "Sidi-Kacem": {
+    "region": "Rabat-Salé-Kénitra",
+    "population": 545509,
+    "superficie": 4060,
+    "densite": 134,
+    "chef_lieu": "Sidi Kacem",
+    "coordinates": {
+      "lat": 34.22,
+      "lon": -5.71
+    }
+  },
+  "Sidi-Slimane": {
+    "region": "Rabat-Salé-Kénitra",
+    "population": 351199,
+    "superficie": 1312,
+    "densite": 268,
+    "chef_lieu": "Sidi Slimane",
+    "coordinates": {
+      "lat": 34.2654,
+      "lon": -5.9248
+    }
+  },
+  "Casablanca": {
+    "region": "Casablanca-Settat",
+    "population": 3218036,
+    "superficie": 1615,
+    "densite": 1993,
+    "chef_lieu": "Casablanca",
+    "coordinates": {
+      "lat": 33.5731,
+      "lon": -7.5898
+    }
+  },
+  "Mohammadia": {
+    "region": "Casablanca-Settat",
+    "population": 514057,
+    "superficie": 331,
+    "densite": 1553,
+    "chef_lieu": "Mohammadia",
+    "coordinates": {
+      "lat": 33.6861,
+      "lon": -7.3828
+    }
+  },
+  "El-Jadida": {
+    "region": "Casablanca-Settat",
+    "population": 914367,
+    "superficie": 2984,
+    "densite": 306,
+    "chef_lieu": "El Jadida",
+    "coordinates": {
+      "lat": 33.2316,
+      "lon": -8.5006
+    }
+  },
+  "Nouaceur": {
+    "region": "Casablanca-Settat",
+    "population": 672324,
+    "superficie": 488,
+    "densite": 1378,
+    "chef_lieu": "Nouaceur",
+    "coordinates": {
+      "lat": 33.3678,
+      "lon": -7.5762
+    }
+  },
+  "Mediouna": {
+    "region": "Casablanca-Settat",
+    "population": 345787,
+    "superficie": 234,
+    "densite": 1478,
+    "chef_lieu": "Médiouna",
+    "coordinates": {
+      "lat": 33.45,
+      "lon": -7.5167
+    }
+  },
+  "Benslimane": {
+    "region": "Casablanca-Settat",
+    "population": 279517,
+    "superficie": 2760,
+    "densite": 101,
+    "chef_lieu": "Benslimane",
+    "coordinates": {
+      "lat": 33.6186,
+      "lon": -7.1139
+    }
+  },
+  "Berrechid": {
+    "region": "Casablanca-Settat",
+    "population": 640657,
+    "superficie": 1690,
+    "densite": 379,
+    "chef_lieu": "Berrechid",
+    "coordinates": {
+      "lat": 33.2678,
+      "lon": -7.5883
+    }
+  },
+  "Settat": {
+    "region": "Casablanca-Settat",
+    "population": 652292,
+    "superficie": 5700,
+    "densite": 114,
+    "chef_lieu": "Settat",
+    "coordinates": {
+      "lat": 33.0,
+      "lon": -7.6167
+    }
+  },
+  "Sidi-Bennour": {
+    "region": "Casablanca-Settat",
+    "population": 451930,
+    "superficie": 3157,
+    "densite": 143,
+    "chef_lieu": "Sidi Bennour",
+    "coordinates": {
+      "lat": 32.65,
+      "lon": -8.42
+    }
+  },
+  "Marrakech": {
+    "region": "Marrakech-Safi",
+    "population": 1571580,
+    "superficie": 6231,
+    "densite": 252,
+    "chef_lieu": "Marrakech",
+    "coordinates": {
+      "lat": 31.6295,
+      "lon": -7.9811
+    }
+  },
+  "Chichaoua": {
+    "region": "Marrakech-Safi",
+    "population": 379079,
+    "superficie": 6872,
+    "densite": 55,
+    "chef_lieu": "Chichaoua",
+    "coordinates": {
+      "lat": 31.5447,
+      "lon": -8.7661
+    }
+  },
+  "Al-Haouz": {
+    "region": "Marrakech-Safi",
+    "population": 642815,
+    "superficie": 6612,
+    "densite": 97,
+    "chef_lieu": "Tahanaout",
+    "coordinates": {
+      "lat": 31.3,
+      "lon": -7.9
+    }
+  },
+  "El-Kelâa-des--Sraghna": {
+    "region": "Marrakech-Safi",
+    "population": 560273,
+    "superficie": 6695,
+    "densite": 84,
+    "chef_lieu": "El Kelâa Des-Sraghna",
+    "coordinates": {
+      "lat": 32.05,
+      "lon": -7.4
+    }
+  },
+  "Essaouira": {
+    "region": "Marrakech-Safi",
+    "population": 426719,
+    "superficie": 6335,
+    "densite": 67,
+    "chef_lieu": "Essaouira",
+    "coordinates": {
+      "lat": 31.5125,
+      "lon": -9.77
+    }
+  },
+  "Rehamna": {
+    "region": "Marrakech-Safi",
+    "population": 346108,
+    "superficie": 5856,
+    "densite": 59,
+    "chef_lieu": "Benguerir",
+    "coordinates": {
+      "lat": 32.29,
+      "lon": -7.93
+    }
+  },
+  "Safi": {
+    "region": "Marrakech-Safi",
+    "population": 719671,
+    "superficie": 2379,
+    "densite": 302,
+    "chef_lieu": "Safi",
+    "coordinates": {
+      "lat": 32.3,
+      "lon": -9.2333
+    }
+  },
+  "Youssoufia": {
+    "region": "Marrakech-Safi",
+    "population": 246148,
+    "superficie": 3167,
+    "densite": 78,
+    "chef_lieu": "Youssoufia",
+    "coordinates": {
+      "lat": 32.2464,
+      "lon": -8.5289
+    }
+  },
+  "Errachidia": {
+    "region": "Drâa-Tafilalet",
+    "population": 427572,
+    "superficie": 59585,
+    "densite": 7,
+    "chef_lieu": "Errachidia",
+    "coordinates": {
+      "lat": 31.9314,
+      "lon": -4.4247
+    }
+  },
+  "Ouarzazate": {
+    "region": "Drâa-Tafilalet",
+    "population": 304932,
+    "superficie": 18848,
+    "densite": 16,
+    "chef_lieu": "Ouarzazate",
+    "coordinates": {
+      "lat": 30.92,
+      "lon": -6.89
+    }
+  },
+  "Midelt": {
+    "region": "Drâa-Tafilalet",
+    "population": 313769,
+    "superficie": 13731,
+    "densite": 23,
+    "chef_lieu": "Midelt",
+    "coordinates": {
+      "lat": 32.68,
+      "lon": -4.74
+    }
+  },
+  "Tinghir": {
+    "region": "Drâa-Tafilalet",
+    "population": 323805,
+    "superficie": 13407,
+    "densite": 24,
+    "chef_lieu": "Tinghir",
+    "coordinates": {
+      "lat": 31.5147,
+      "lon": -5.5283
+    }
+  },
+  "Zagora": {
+    "region": "Drâa-Tafilalet",
+    "population": 285545,
+    "superficie": 22623,
+    "densite": 13,
+    "chef_lieu": "Zagora",
+    "coordinates": {
+      "lat": 30.33,
+      "lon": -5.84
+    }
+  },
+  "Agadir-Ida-Ou-Tanane": {
+    "region": "Souss-Massa",
+    "population": 721431,
+    "superficie": 2297,
+    "densite": 314,
+    "chef_lieu": "Agadir",
+    "coordinates": {
+      "lat": 30.4278,
+      "lon": -9.5981
+    }
+  },
+  "Inezgane--Ait-Melloul": {
+    "region": "Souss-Massa",
+    "population": 636916,
+    "superficie": 293,
+    "densite": 2174,
+    "chef_lieu": "Inezgane",
+    "coordinates": {
+      "lat": 30.3514,
+      "lon": -9.5372
+    }
+  },
+  "Chtouka--Ait-Baha": {
+    "region": "Souss-Massa",
+    "population": 493623,
+    "superficie": 3523,
+    "densite": 140,
+    "chef_lieu": "Biougra",
+    "coordinates": {
+      "lat": 30.0667,
+      "lon": -9.15
+    }
+  },
+  "Taroudannt": {
+    "region": "Souss-Massa",
+    "population": 858162,
+    "superficie": 16500,
+    "densite": 52,
+    "chef_lieu": "Taroudannt",
+    "coordinates": {
+      "lat": 30.47,
+      "lon": -8.88
+    }
+  },
+  "Tiznit": {
+    "region": "Souss-Massa",
+    "population": 198542,
+    "superficie": 5173,
+    "densite": 38,
+    "chef_lieu": "Tiznit",
+    "coordinates": {
+      "lat": 29.7,
+      "lon": -9.73
+    }
+  },
+  "Tata": {
+    "region": "Souss-Massa",
+    "population": 111757,
+    "superficie": 26000,
+    "densite": 4,
+    "chef_lieu": "Tata",
+    "coordinates": {
+      "lat": 29.75,
+      "lon": -7.97
+    }
+  },
+  "Guelmim": {
+    "region": "Guelmim-Oued Noun",
+    "population": 196267,
+    "superficie": 10783,
+    "densite": 18,
+    "chef_lieu": "Guelmim",
+    "coordinates": {
+      "lat": 28.9864,
+      "lon": -10.0572
+    }
+  },
+  "Assa-Zag": {
+    "region": "Guelmim-Oued Noun",
+    "population": 53298,
+    "superficie": 18428,
+    "densite": 3,
+    "chef_lieu": "Assa",
+    "coordinates": {
+      "lat": 28.6078,
+      "lon": -9.4294
+    }
+  },
+  "Tan-Tan": {
+    "region": "Guelmim-Oued Noun",
+    "population": 94519,
+    "superficie": 17295,
+    "densite": 5,
+    "chef_lieu": "Tan-Tan",
+    "coordinates": {
+      "lat": 28.4378,
+      "lon": -11.1028
+    }
+  },
+  "Sidi-Ifni": {
+    "region": "Guelmim-Oued Noun",
+    "population": 104601,
+    "superficie": 1600,
+    "densite": 65,
+    "chef_lieu": "Sidi Ifni",
+    "coordinates": {
+      "lat": 29.3797,
+      "lon": -10.1733
+    }
+  },
+  "Laayoune": {
+    "region": "Laâyoune-Sakia El Hamra",
+    "population": 295555,
+    "superficie": 19081,
+    "densite": 15,
+    "chef_lieu": "Laâyoune",
+    "coordinates": {
+      "lat": 27.1536,
+      "lon": -13.2033
+    }
+  },
+  "Boujdour": {
+    "region": "Laâyoune-Sakia El Hamra",
+    "population": 65381,
+    "superficie": 39933,
+    "densite": 2,
+    "chef_lieu": "Boujdour",
+    "coordinates": {
+      "lat": 26.1289,
+      "lon": -14.4842
+    }
+  },
+  "Tarfaya": {
+    "region": "Laâyoune-Sakia El Hamra",
+    "population": 16228,
+    "superficie": 15453,
+    "densite": 1,
+    "chef_lieu": "Tarfaya",
+    "coordinates": {
+      "lat": 27.9392,
+      "lon": -12.9261
+    }
+  },
+  "Es-Semara": {
+    "region": "Laâyoune-Sakia El Hamra",
+    "population": 73864,
+    "superficie": 65000,
+    "densite": 1,
+    "chef_lieu": "Es-Semara",
+    "coordinates": {
+      "lat": 26.7439,
+      "lon": -11.6711
+    }
+  },
+  "Oued-Ed-Dahab": {
+    "region": "Dakhla-Oued Ed-Dahab",
+    "population": 195467,
+    "superficie": 76948,
+    "densite": 3,
+    "chef_lieu": "Dakhla",
+    "coordinates": {
+      "lat": 23.6848,
+      "lon": -15.9575
+    }
+  },
+  "Aousserd": {
+    "region": "Dakhla-Oued Ed-Dahab",
+    "population": 24498,
+    "superficie": 53950,
+    "densite": 0.5,
+    "chef_lieu": "Aousserd",
+    "coordinates": {
+      "lat": 22.55,
+      "lon": -14.33
+    }
+  },
+  "Beni-Mellal": {
+    "region": "Béni Mellal-Khénifra",
+    "population": 580327,
+    "superficie": 7075,
+    "densite": 82,
+    "chef_lieu": "Béni Mellal",
+    "coordinates": {
+      "lat": 32.3372,
+      "lon": -6.3497
+    }
+  },
+  "Azilal": {
+    "region": "Béni Mellal-Khénifra",
+    "population": 574112,
+    "superficie": 9800,
+    "densite": 59,
+    "chef_lieu": "Azilal",
+    "coordinates": {
+      "lat": 31.96,
+      "lon": -6.57
+    }
+  },
+  "Fquih-Ben-Salah": {
+    "region": "Béni Mellal-Khénifra",
+    "population": 475977,
+    "superficie": 1700,
+    "densite": 280,
+    "chef_lieu": "Fquih Ben Salah",
+    "coordinates": {
+      "lat": 32.5,
+      "lon": -6.69
+    }
+  },
+  "Khenifra": {
+    "region": "Béni Mellal-Khénifra",
+    "population": 370240,
+    "superficie": 10000,
+    "densite": 37,
+    "chef_lieu": "Khénifra",
+    "coordinates": {
+      "lat": 32.94,
+      "lon": -5.67
+    }
+  },
+  "Khouribga": {
+    "region": "Béni Mellal-Khénifra",
+    "population": 525145,
+    "superficie": 4250,
+    "densite": 124,
+    "chef_lieu": "Khouribga",
+    "coordinates": {
+      "lat": 32.88,
+      "lon": -6.91
+    }
+  },
+  "Tanger-Tetouan-Al-Hoceima": {
+    "region": "Tanger-Tétouan-Al Hoceïma",
+    "population": 371527,
+    "superficie": 3550,
+    "densite": 105,
+    "chef_lieu": "Al Hoceïma",
+    "coordinates": {
+      "lat": 35.7595,
+      "lon": -5.834
+    }
+  }
+}

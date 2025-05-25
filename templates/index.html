@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte Interactive du Maroc</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/weather.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Carte Interactive du Maroc</h1>
+            <p>Cliquez sur une région pour obtenir plus d'informations</p>
+        </header>
+        
+        <div class="content">
+            <div id="map"></div>
+            <div id="info-panel">
+                <h2>Informations sur la région</h2>
+                <div id="region-info">
+                    <p>Sélectionnez une région sur la carte pour afficher ses informations.</p>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>&copy; 2025 - Website Maroc - Carte Interactive</p>
+        </footer>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="{{ url_for('static', filename='js/map.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/weather.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/province-fixes.js') }}"></script>
+</body>
+</html>
