@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #e8f5e9;
+  color: #2f4f4f;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 15px 30px;
+  display: flex;
+  flex-direction: column;
+  min-height: 90vh;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(34, 139, 34, 0.15);
+}
+
+header {
+  text-align: center;
+  padding: 30px 15px 20px;
+  background-color: #a5d6a7;
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 4px 10px rgba(0, 100, 0, 0.2);
+  color: #1b5e20;
+}
+
+header h1 {
+  font-weight: 600;
+  font-size: 2.8rem;
+  margin-bottom: 8px;
+}
+
+header p {
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: #2e7d32;
+}
+
+.content {
+  display: flex;
+  gap: 25px;
+  flex: 1;
+  min-height: 600px;
+  padding: 20px 0;
+}
+
+#map {
+  flex: 2;
+  min-width: 320px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  height: 650px;
+  transition: box-shadow 0.3s ease;
+}
+
+#map:hover {
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+}
+
+#info-panel {
+  flex: 1;
+  min-width: 280px;
+  background-color: #ffffffcc;
+  padding: 25px 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.10);
+  overflow-y: auto;
+  outline-offset: 5px;
+  transition: transform 0.3s ease;
+}
+
+#info-panel:focus {
+  box-shadow: 0 0 8px 3px #66bb6a;
+  transform: translateY(-3px);
+}
+
+#info-panel h2 {
+  font-weight: 600;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #1b5e20;
+  border-bottom: 2px solid #a5d6a7;
+  padding-bottom: 12px;
+}
+
+.info-text p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: #2e7d32;
+}
+
+.region-detail {
+  margin-bottom: 14px;
+  font-size: 1.05rem;
+}
+
+.region-detail strong {
+  font-weight: 700;
+  color: #1b5e20;
+}
+
+.provinces-list {
+  list-style-type: none;
+  padding-left: 10px;
+  margin-top: 12px;
+}
+
+.provinces-list li {
+  margin-bottom: 8px;
+  color: #2f4f4f;
+  font-weight: 500;
+}
+
+.provinces-list .province-population {
+  color: #558b2f;
+  font-weight: 400;
+  margin-left: 6px;
+  font-size: 0.9rem;
+}
+
+.weather-card {
+  margin-top: 20px;
+  background-color: #e6f2e6;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 4px 8px rgba(34, 139, 34, 0.1);
+  color: #2e7d32;
+  font-size: 1rem;
+  transition: opacity 0.4s ease;
+}
+
+.weather-card h4 {
+  margin-top: 0;
+  color: #1b5e20;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #a5d6a7;
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+}
+
+.weather-time {
+  font-size: 0.85rem;
+  color: #4caf50;
+}
+
+.weather-content {
+  display: flex;
+  align-items: center;
+}
+
+.weather-icon img {
+  width: 64px;
+  height: 64px;
+  animation: weather-icon-move 3s ease infinite;
+}
+
+.temperature {
+  font-size: 26px;
+  font-weight: 700;
+  color: #388e3c;
+}
+
+.description {
+  text-transform: capitalize;
+  margin-bottom: 5px;
+}
+
+.feels-like {
+  font-size: 13px;
+  color: #4caf50;
+}
+
+.extra-info {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #4caf50;
+  display: flex;
+  gap: 15px;
+}
+
+.extra-info i {
+  margin-right: 5px;
+}
+
+/* Animation météo */
+@keyframes weather-icon-move {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 25px 15px;
+  background-color: #1b5e20;
+  color: #d0f0c0;
+  border-radius: 0 0 12px 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+
+  #map {
+    height: 400px;
+    margin-bottom: 25px;
+  }
+
+  #info-panel {
+    min-width: 100%;
+    max-height: 400px;
+  }
+}

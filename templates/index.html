@@ -1,39 +1,69 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carte Interactive du Maroc</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/weather.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Carte Interactive du Maroc</title>
+
+  <!-- Leaflet CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xwE/5sFWqpsk4e7fMTH1oRZHbUEZh9grhFqLl9+0QxEHL4PzFyDjcR6CtR9BfZplO79Zw5rFf38DjJ1lB2zqQ=="
+    crossorigin=""
+  />
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <!-- Style CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style_improved.css') }}" />
+
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Carte Interactive du Maroc</h1>
-            <p>Cliquez sur une région pour obtenir plus d'informations</p>
-        </header>
-        
-        <div class="content">
-            <div id="map"></div>
-            <div id="info-panel">
-                <h2>Informations sur la région</h2>
-                <div id="region-info">
-                    <p>Sélectionnez une région sur la carte pour afficher ses informations.</p>
-                </div>
-            </div>
-        </div>
-        
-        <footer>
-            <p>&copy; 2025 - Website Maroc - Carte Interactive</p>
-        </footer>
-    </div>
+  <div class="container">
+    <header>
+      <h1>Carte Interactive du Maroc</h1>
+      <p>Cliquez sur une région pour obtenir plus d'informations</p>
+    </header>
 
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <script src="{{ url_for('static', filename='js/map.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/weather.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/province-fixes.js') }}"></script>
+    <main class="content">
+      <section id="map"></section>
+
+      <aside id="info-panel" tabindex="0" aria-live="polite" aria-label="Informations sur la région sélectionnée">
+        <h2>Informations sur la région</h2>
+        <div id="region-info" class="info-text">
+          <p>Sélectionnez une région sur la carte pour afficher ses informations.</p>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 - Website Maroc - Carte Interactive</p>
+    </footer>
+  </div>
+
+  <!-- Leaflet JS -->
+  <script
+    src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-1w5Fiq3K++e5LjVyxhH3XVpHIdBky34+TxG1ntVZZhF6DkBsyLZs3cIqXmB7P1JcYOG8kFj59u5Se90Vu6kLZQ=="
+    crossorigin=""
+  ></script>
+
+  <!-- Scripts JS -->
+  <script defer src="{{ url_for('static', filename='js/map_improved.js') }}"></script>
+  <script defer src="{{ url_for('static', filename='js/weather_improved.js') }}"></script>
+  <script defer src="{{ url_for('static', filename='js/province-fixes_improved.js') }}"></script>
 </body>
 </html>
