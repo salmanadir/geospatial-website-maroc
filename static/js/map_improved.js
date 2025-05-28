@@ -1,6 +1,15 @@
 // map_improved.js
 
-const map = L.map('map');
+// Initialize map with explicit options
+const map = L.map('map', {
+    minZoom: 4,
+    maxZoom: 18,
+    zoomControl: true
+});
+
+// Add console logging for debugging
+console.log('Map initialized:', map);
+
 let regionsLayer = null;
 let provincesLayer = null;
 let selectedRegion = null;
@@ -35,17 +44,27 @@ function normalizeName(name) {
     .trim();
 }
 
-// Initialize map view on Maroc center
-fetch('/api/maroc').then(r => r.json()).then(data => {
-  map.setView([data.coordonnees.latitude, data.coordonnees.longitude], 6);
-}).catch(() => {
-  map.setView([34.025278, -6.836111], 6); // default fallback
-});
-
-// Add OSM tiles
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '&copy; OpenStreetMap contributors'
+// Add OSM tiles with error handling
+const tileLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors',
+    maxZoom: 18
 }).addTo(map);
+
+// Add console logging for tile layer
+console.log('Tile layer added:', tileLayer);
+
+// Initialize map view on Maroc center with error handling
+fetch('/api/maroc')
+    .then(r => r.json())
+    .then(data => {
+        console.log('Fetched Maroc data:', data);
+        map.setView([data.coordonnees.latitude, data.coordonnees.longitude], 6);
+    })
+    .catch(err => {
+        console.error('Error fetching Maroc data:', err);
+        // Default fallback coordinates for Morocco
+        map.setView([31.7917, -7.0926], 6);
+    });
 
 // Style for regions and provinces
 function style(feature) {

@@ -62,6 +62,10 @@ header p {
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
   height: 650px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  background-color: #f8f9fa;
   transition: box-shadow 0.3s ease;
 }
 
