@@ -1,0 +1,62 @@
+{
+  "casablanca-settat": {
+    "energie_solaire_mw": 100,
+    "energie_eolienne_mw": 75,
+    "zone_sensible": "Pollution urbaine"
+  },
+  "rabat-sale-kenitra": {
+    "energie_solaire_mw": 120,
+    "energie_eolienne_mw": 60,
+    "zone_sensible": "Inondations côtières"
+  },
+  "tanger-tetouan-al hoceima": {
+    "energie_solaire_mw": 90,
+    "energie_eolienne_mw": 240,
+    "zone_sensible": "Érosion littorale"
+  },
+  "fes-meknes": {
+    "energie_solaire_mw": 85,
+    "energie_eolienne_mw": 30,
+    "zone_sensible": "Risque sismique"
+  },
+  "marrakech-safi": {
+    "energie_solaire_mw": 130,
+    "energie_eolienne_mw": 90,
+    "zone_sensible": "Chaleur extrême"
+  },
+  "souss-massa": {
+    "energie_solaire_mw": 110,
+    "energie_eolienne_mw": 80,
+    "zone_sensible": "Stress hydrique"
+  },
+  "l'oriental": {
+    "energie_solaire_mw": 140,
+    "energie_eolienne_mw": 70,
+    "zone_sensible": "Sécheresse"
+  },
+  "draa-tafilalet": {
+    "energie_solaire_mw": 250,
+    "energie_eolienne_mw": 40,
+    "zone_sensible": "Canicules et sécheresse"
+  },
+  "beni mellal-khenifra": {
+    "energie_solaire_mw": 105,
+    "energie_eolienne_mw": 55,
+    "zone_sensible": "Sécheresse"
+  },
+  "laayoune-sakia el hamra": {
+    "energie_solaire_mw": 190,
+    "energie_eolienne_mw": 200,
+    "zone_sensible": "Tempêtes de sable"
+  },
+  "guelmim-oued noun": {
+    "energie_solaire_mw": 160,
+    "energie_eolienne_mw": 160,
+    "zone_sensible": "Pénurie d'eau"
+  },
+  "dakhla-oued ed-dahab": {
+    "energie_solaire_mw": 180,
+    "energie_eolienne_mw": 150,
+    "zone_sensible": "Vulnérabilité marine"
+  }
+}

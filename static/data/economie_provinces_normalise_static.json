@@ -1,0 +1,163 @@
+{
+  "agadir ida-outanane": {
+    "province": "Agadir Ida-Outanane",
+    "region": "Souss-Massa",
+    "pib_milliards_mad": 30,
+    "taux_chomage": 13.2,
+    "secteur_principal": "Tourisme & Pêche"
+  },
+  "al hoceima": {
+    "province": "Al Hoceïma",
+    "region": "Tanger-Tétouan-Al Hoceïma",
+    "pib_milliards_mad": 18,
+    "taux_chomage": 14.8,
+    "secteur_principal": "Pêche & Tourisme"
+  },
+  "beni mellal": {
+    "province": "Béni Mellal",
+    "region": "Béni Mellal-Khénifra",
+    "pib_milliards_mad": 22,
+    "taux_chomage": 15.0,
+    "secteur_principal": "Industrie minière"
+  },
+  "casablanca": {
+    "province": "Casablanca",
+    "region": "Casablanca-Settat",
+    "pib_milliards_mad": 280,
+    "taux_chomage": 14.5,
+    "secteur_principal": "Industrie & Services"
+  },
+  "chefchaouen": {
+    "province": "Chefchaouen",
+    "region": "Tanger-Tétouan-Al Hoceïma",
+    "pib_milliards_mad": 16,
+    "taux_chomage": 16.2,
+    "secteur_principal": "Agriculture & Artisanat"
+  },
+  "el jadida": {
+    "province": "El Jadida",
+    "region": "Casablanca-Settat",
+    "pib_milliards_mad": 25,
+    "taux_chomage": 13.1,
+    "secteur_principal": "Agroalimentaire"
+  },
+  "errachidia": {
+    "province": "Errachidia",
+    "region": "Drâa-Tafilalet",
+    "pib_milliards_mad": 12,
+    "taux_chomage": 17.3,
+    "secteur_principal": "Agriculture & Tourisme"
+  },
+  "fes": {
+    "province": "Fès",
+    "region": "Fès-Meknès",
+    "pib_milliards_mad": 33,
+    "taux_chomage": 14.7,
+    "secteur_principal": "Éducation & Artisanat"
+  },
+  "guelmim": {
+    "province": "Guelmim",
+    "region": "Guelmim-Oued Noun",
+    "pib_milliards_mad": 10,
+    "taux_chomage": 19.5,
+    "secteur_principal": "Élevage & Pêche"
+  },
+  "khouribga": {
+    "province": "Khouribga",
+    "region": "Béni Mellal-Khénifra",
+    "pib_milliards_mad": 20,
+    "taux_chomage": 12.5,
+    "secteur_principal": "Industrie minière"
+  },
+  "laayoune": {
+    "province": "Laâyoune",
+    "region": "Laâyoune-Sakia El Hamra",
+    "pib_milliards_mad": 15,
+    "taux_chomage": 18.8,
+    "secteur_principal": "Pêche & Énergies"
+  },
+  "marrakech": {
+    "province": "Marrakech",
+    "region": "Marrakech-Safi",
+    "pib_milliards_mad": 50,
+    "taux_chomage": 7.7,
+    "secteur_principal": "Tourisme & Artisanat"
+  },
+  "meknes": {
+    "province": "Meknès",
+    "region": "Fès-Meknès",
+    "pib_milliards_mad": 28,
+    "taux_chomage": 13.9,
+    "secteur_principal": "Artisanat & Éducation"
+  },
+  "nador": {
+    "province": "Nador",
+    "region": "L'Oriental",
+    "pib_milliards_mad": 17,
+    "taux_chomage": 18.0,
+    "secteur_principal": "Commerce & Pêche"
+  },
+  "ouarzazate": {
+    "province": "Ouarzazate",
+    "region": "Drâa-Tafilalet",
+    "pib_milliards_mad": 14,
+    "taux_chomage": 16.1,
+    "secteur_principal": "Tourisme saharien"
+  },
+  "oujda-angad": {
+    "province": "Oujda-Angad",
+    "region": "L'Oriental",
+    "pib_milliards_mad": 19,
+    "taux_chomage": 18.3,
+    "secteur_principal": "Commerce frontalier"
+  },
+  "rabat": {
+    "province": "Rabat",
+    "region": "Rabat-Salé-Kénitra",
+    "pib_milliards_mad": 70,
+    "taux_chomage": 10.5,
+    "secteur_principal": "Administration & Services"
+  },
+  "safi": {
+    "province": "Safi",
+    "region": "Marrakech-Safi",
+    "pib_milliards_mad": 24,
+    "taux_chomage": 11.2,
+    "secteur_principal": "Pêche & Industrie"
+  },
+  "settat": {
+    "province": "Settat",
+    "region": "Casablanca-Settat",
+    "pib_milliards_mad": 23,
+    "taux_chomage": 12.0,
+    "secteur_principal": "Industrie & Services"
+  },
+  "tanger-assilah": {
+    "province": "Tanger-Assilah",
+    "region": "Tanger-Tétouan-Al Hoceïma",
+    "pib_milliards_mad": 45,
+    "taux_chomage": 10.8,
+    "secteur_principal": "Logistique & Textile"
+  },
+  "tetouan": {
+    "province": "Tétouan",
+    "region": "Tanger-Tétouan-Al Hoceïma",
+    "pib_milliards_mad": 26,
+    "taux_chomage": 11.4,
+    "secteur_principal": "Textile & Tourisme"
+  },
+  "tiznit": {
+    "province": "Tiznit",
+    "region": "Souss-Massa",
+    "pib_milliards_mad": 13,
+    "taux_chomage": 14.0,
+    "secteur_principal": "Pêche & Artisanat"
+  },
+  "dakhla": {
+    "province": "Dakhla",
+    "region": "Dakhla-Oued Ed Dahab",
+    "pib_milliards_mad": 9,
+    "taux_chomage": 20.0,
+    "secteur_principal": "Pêche & Tourisme"
+  }
+}

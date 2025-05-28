@@ -1,0 +1,74 @@
+{
+  "casablanca-settat": {
+    "region": "Casablanca-Settat",
+    "pib_milliards_mad": 425,
+    "taux_chomage": 15.1,
+    "secteur_principal": "Industrie & Services"
+  },
+  "rabat-sale-kenitra": {
+    "region": "Rabat-Salé-Kénitra",
+    "pib_milliards_mad": 225,
+    "taux_chomage": 11.3,
+    "secteur_principal": "Administration & Agriculture"
+  },
+  "tanger-tetouan-al hoceima": {
+    "region": "Tanger-Tétouan-Al Hoceïma",
+    "pib_milliards_mad": 130,
+    "taux_chomage": 11.2,
+    "secteur_principal": "Industrie & Logistique"
+  },
+  "fes-meknes": {
+    "region": "Fès-Meknès",
+    "pib_milliards_mad": 105,
+    "taux_chomage": 14.5,
+    "secteur_principal": "Agriculture & Artisanat"
+  },
+  "marrakech-safi": {
+    "region": "Marrakech-Safi",
+    "pib_milliards_mad": 110,
+    "taux_chomage": 7.7,
+    "secteur_principal": "Tourisme & Agriculture"
+  },
+  "souss-massa": {
+    "region": "Souss-Massa",
+    "pib_milliards_mad": 95,
+    "taux_chomage": 13.6,
+    "secteur_principal": "Agriculture & Pêche"
+  },
+  "l'oriental": {
+    "region": "L'Oriental",
+    "pib_milliards_mad": 85,
+    "taux_chomage": 18.5,
+    "secteur_principal": "Agriculture & Commerce"
+  },
+  "draa-tafilalet": {
+    "region": "Drâa-Tafilalet",
+    "pib_milliards_mad": 60,
+    "taux_chomage": 10.9,
+    "secteur_principal": "Agriculture"
+  },
+  "beni mellal-khenifra": {
+    "region": "Béni Mellal-Khénifra",
+    "pib_milliards_mad": 75,
+    "taux_chomage": 12.2,
+    "secteur_principal": "Industrie légère & Agriculture"
+  },
+  "laayoune-sakia el hamra": {
+    "region": "Laâyoune-Sakia El Hamra",
+    "pib_milliards_mad": 35,
+    "taux_chomage": 19.9,
+    "secteur_principal": "Pêche & Énergies renouvelables"
+  },
+  "guelmim-oued noun": {
+    "region": "Guelmim-Oued Noun",
+    "pib_milliards_mad": 30,
+    "taux_chomage": 19.5,
+    "secteur_principal": "Pêche & Artisanat"
+  },
+  "dakhla-oued ed dahab": {
+    "region": "Dakhla-Oued Ed Dahab",
+    "pib_milliards_mad": 25,
+    "taux_chomage": 20.0,
+    "secteur_principal": "Tourisme & Pêche"
+  }
+}

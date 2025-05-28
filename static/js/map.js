@@ -38,6 +38,53 @@ let currentView = 'regions'; // 'regions' ou 'provinces'
 // Variables globales pour stocker les détails des provinces et des régions
 let provinceDetails = {};
 let regionDetails = {};
+let economieData = {};
+
+fetch("/static/data/economie_provinces_normalise_static.json")
+  .then(res => res.json())
+  .then(data => {
+    economieData = data;
+  });
+let economieRegionData = {};
+
+fetch("/static/data/economie_regions_normalise.json")
+  .then(res => res.json())
+  .then(data => {
+    economieRegionData = data;
+  });
+
+let educationRegionData = {};
+let educationProvinceData = {};
+
+fetch("/static/data/education_regions_normalise.json")
+  .then(res => res.json())
+  .then(data => {
+    educationRegionData = data;
+  });
+
+fetch("/static/data/education_provinces_normalise.json")
+  .then(res => res.json())
+  .then(data => {
+    educationProvinceData = data;
+  });
+let energieClimatData = {};
+
+fetch("/static/data/energie_climat_regions_normalise.json")
+  .then(res => res.json())
+  .then(data => {
+    energieClimatData = data;
+  });
+let energieClimatProvinceData = {};
+
+fetch("/static/data/energie_climat_provinces_normalise.json")
+  .then(res => res.json())
+  .then(data => {
+    energieClimatProvinceData = data;
+  });
+
+
+
+
 
 // Table de correspondance pour les noms de provinces
 const provinceNameMapping = {
@@ -729,6 +776,39 @@ function showRegionInfo(e) {
     } else {
         console.error(`Aucune province trouvée pour la région ${regionName}`);
     }
+    // Normaliser le nom pour la recherche dans le JSON
+const econKey = regionName.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+const econ = economieRegionData[econKey];
+
+if (econ) {
+    html += `
+        <div class="region-detail"><strong>PIB régional:</strong> ${econ.pib_milliards_mad} milliards MAD</div>
+        <div class="region-detail"><strong>Taux de chômage:</strong> ${econ.taux_chomage}%</div>
+        <div class="region-detail"><strong>Secteur principal:</strong> ${econ.secteur_principal}</div>
+    `;
+}
+const eduKey = regionName.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+const edu = educationRegionData[eduKey];
+
+if (edu) {
+    html += `
+      <div class="region-detail"><strong>Taux d'alphabétisation:</strong> ${edu.taux_alphabétisation}%</div>
+      <div class="region-detail"><strong>Taux de scolarisation (secondaire):</strong> ${edu.taux_scolarisation_secondaire}%</div>
+    `;
+}
+const ecoKey = regionName.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+const energie = energieClimatData[ecoKey];
+
+if (energie) {
+  html += `
+    <div class="region-detail"><strong>Énergie solaire produite:</strong> ${energie.energie_solaire_mw} MW</div>
+    <div class="region-detail"><strong>Énergie éolienne produite:</strong> ${energie.energie_eolienne_mw} MW</div>
+    <div class="region-detail"><strong>Zone à risque climatique:</strong> ${energie.zone_sensible}</div>
+  `;
+}
+
+
+
     
     // Afficher les informations dans le panneau latéral
     document.getElementById('region-info').innerHTML = html;
@@ -925,6 +1005,30 @@ function loadProvinces(regionName) {
                             
                             if (provinceInfo) {
                                 // Utiliser les informations du fichier province_details.json
+                                // Ajouter les données économiques harmonisées
+const econKey = normalizedProvinceName.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+const econ = economieData[econKey];
+
+if (econ) {
+    html += `<div class="province-detail"><strong>PIB:</strong> ${econ.pib_milliards_mad} milliards MAD</div>`;
+    html += `<div class="province-detail"><strong>Taux de chômage:</strong> ${econ.taux_chomage}%</div>`;
+    html += `<div class="province-detail"><strong>Secteur principal:</strong> ${econ.secteur_principal}</div>`;
+}
+const edu = educationProvinceData[econKey]; // utiliser la même clé que pour économie
+
+if (edu) {
+    html += `<div class="province-detail"><strong>Alphabétisation:</strong> ${edu.taux_alphabétisation}%</div>`;
+    html += `<div class="province-detail"><strong>Scolarisation secondaire:</strong> ${edu.taux_scolarisation_secondaire}%</div>`;
+}
+const energie = energieClimatProvinceData[econKey]; // réutilise econKey
+
+if (energie) {
+    html += `<div class="province-detail"><strong>Énergie solaire:</strong> ${energie.energie_solaire_mw} MW</div>`;
+    html += `<div class="province-detail"><strong>Énergie éolienne:</strong> ${energie.energie_eolienne_mw} MW</div>`;
+    html += `<div class="province-detail"><strong>Zone à risque:</strong> ${energie.zone_sensible}</div>`;
+}
+
+
                                 if (provinceInfo.population) {
                                     html += `<div class="province-detail"><strong>Population:</strong> ${Number(provinceInfo.population).toLocaleString()} habitants</div>`;
                                 }

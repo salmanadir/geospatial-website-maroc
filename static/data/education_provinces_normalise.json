@@ -1,0 +1,22 @@
+{
+  "agadir ida-outanane": {
+    "taux_alphabétisation": 81,
+    "taux_scolarisation_secondaire": 74
+  },
+  "oujda-angad": {
+    "taux_alphabétisation": 76,
+    "taux_scolarisation_secondaire": 69
+  },
+  "marrakech": {
+    "taux_alphabétisation": 79,
+    "taux_scolarisation_secondaire": 73
+  },
+  "fes": {
+    "taux_alphabétisation": 77,
+    "taux_scolarisation_secondaire": 72
+  },
+  "casablanca": {
+    "taux_alphabétisation": 84,
+    "taux_scolarisation_secondaire": 78
+  }
+}

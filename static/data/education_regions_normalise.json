@@ -1,0 +1,50 @@
+{
+  "casablanca-settat": {
+    "taux_alphabétisation": 85,
+    "taux_scolarisation_secondaire": 78
+  },
+  "rabat-sale-kenitra": {
+    "taux_alphabétisation": 83,
+    "taux_scolarisation_secondaire": 76
+  },
+  "tanger-tetouan-al hoceima": {
+    "taux_alphabétisation": 80,
+    "taux_scolarisation_secondaire": 73
+  },
+  "fes-meknes": {
+    "taux_alphabétisation": 78,
+    "taux_scolarisation_secondaire": 71
+  },
+  "marrakech-safi": {
+    "taux_alphabétisation": 77,
+    "taux_scolarisation_secondaire": 72
+  },
+  "souss-massa": {
+    "taux_alphabétisation": 79,
+    "taux_scolarisation_secondaire": 74
+  },
+  "l'oriental": {
+    "taux_alphabétisation": 75,
+    "taux_scolarisation_secondaire": 70
+  },
+  "draa-tafilalet": {
+    "taux_alphabétisation": 73,
+    "taux_scolarisation_secondaire": 68
+  },
+  "beni mellal-khenifra": {
+    "taux_alphabétisation": 74,
+    "taux_scolarisation_secondaire": 69
+  },
+  "laayoune-sakia el hamra": {
+    "taux_alphabétisation": 70,
+    "taux_scolarisation_secondaire": 65
+  },
+  "guelmim-oued noun": {
+    "taux_alphabétisation": 72,
+    "taux_scolarisation_secondaire": 66
+  },
+  "dakhla-oued ed-dahab": {
+    "taux_alphabétisation": 68,
+    "taux_scolarisation_secondaire": 64
+  }
+}
