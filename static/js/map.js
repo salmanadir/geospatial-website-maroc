@@ -97,13 +97,13 @@ const provinceNameMapping = {
     "El Kelaa Sraghna": "El-Kelâa-des--Sraghna",
     "El Kelâa Des-Sraghna": "El-Kelâa-des--Sraghna",
     "El-Kelâa-des-Sraghna": "El-Kelâa-des--Sraghna",
-    
+
     // Variations pour Agadir
     "Agadir": "Agadir-Ida-Ou-Tanane",
     "Agadir Ida Outanane": "Agadir-Ida-Ou-Tanane",
     "Agadir-Ida-Outanane": "Agadir-Ida-Ou-Tanane",
     "Agadir Ida-Outanane": "Agadir-Ida-Ou-Tanane",
-    
+
     // Variations pour Laâyoune
     "Laayoune": "Laayoune",
     "Laâyoune": "Laayoune",
@@ -112,112 +112,112 @@ const provinceNameMapping = {
     "El Ayoun": "Laayoune",
     "El-Aaiun": "Laayoune",
     "Layoune": "Laayoune",
-    
+
     // Variations pour Al Hoceima
     "Al Hoceïma": "Al-Hoceima",
     "Hoceima": "Al-Hoceima",
     "Al Hoceima": "Al-Hoceima",
     "Al-Hoceïma": "Al-Hoceima",
     "Al-Hoceima": "Al-Hoceima",
-    
+
     // Variations pour Oued Ed-Dahab (Dakhla)
     "Dakhla": "Oued-Ed-Dahab",
     "Oued Eddahab": "Oued-Ed-Dahab",
     "Oued Ed-Dahab": "Oued-Ed-Dahab",
     "Oued-Eddahab": "Oued-Ed-Dahab",
-    
+
     // Variations pour Taroudannt
     "Taroudant": "Taroudannt",
-    
+
     // Variations pour Inezgane
     "Inezgane": "Inezgane--Ait-Melloul",
     "Inezgane-Aït Melloul": "Inezgane--Ait-Melloul",
-    
+
     // Variations pour Chtouka
     "Chtouka": "Chtouka--Ait-Baha",
     "Chtouka Ait Baha": "Chtouka--Ait-Baha",
     "Chtouka-Aït Baha": "Chtouka--Ait-Baha",
-    
+
     // Variations pour Assa-Zag
     "Assa": "Assa-Zag",
     "Zag": "Assa-Zag",
-    
+
     // Variations pour Sidi Ifni
     "Sidi Ifni": "Sidi-Ifni",
     "Ifni": "Sidi-Ifni",
-    
+
     // Variations pour Al Haouz
     "Al Haouz": "Al-Haouz",
     "Haouz": "Al-Haouz",
-    
+
     // Variations pour Fquih Ben Salah
     "Fquih Ben Salah": "Fquih-Ben-Salah",
     "Fkih Ben Salah": "Fquih-Ben-Salah",
     "Fkih-Ben-Salah": "Fquih-Ben-Salah",
-    
+
     // Variations pour Beni Mellal
     "Beni Mellal": "Beni-Mellal",
-    
+
     // Variations pour Khenifra
     "Khenifra": "Khenifra",
     "Khénifra": "Khenifra",
-    
+
     // Variations pour Sidi Bennour
     "Sidi Bennour": "Sidi-Bennour",
-    
+
     // Variations pour El Jadida
     "El Jadida": "El-Jadida",
     "Jadida": "El-Jadida",
-    
+
     // Variations pour Mediouna
     "Mediouna": "Mediouna",
-    
+
     // Variations pour Skhirate-Temara
     "Skhirate-Temara": "Skhirate--Temara",
     "Skhirate Temara": "Skhirate--Temara",
     "Temara": "Skhirate--Temara",
-    
+
     // Variations pour Khemisset
     "Khemisset": "Khemisset",
-    
+
     // Variations pour Sale
     "Sale": "Sale",
     "Salé": "Sale",
-    
+
     // Variations pour Kenitra
     "Kenitra": "Kenitra",
     "Kénitra": "Kenitra",
-    
+
     // Variations pour Sidi Slimane
     "Sidi Slimane": "Sidi-Slimane",
-    
+
     // Variations pour Sidi Kacem
     "Sidi Kacem": "Sidi-Kacem",
-    
+
     // Variations pour M'diq-Fnideq
     "M'diq-Fnideq": "Mdiq-Fnidq",
     "Mdiq-Fnidq": "Mdiq-Fnidq",
     "M'diq Fnideq": "Mdiq-Fnidq",
     "Mdiq Fnidq": "Mdiq-Fnidq",
-    
+
     // Variations pour Tétouan
     "Tétouan": "Tetouan",
     "Tetouan": "Tetouan",
-    
+
     // Variations pour Fès
     "Fès": "Fes",
     "Fes": "Fes",
-    
+
     // Variations pour Meknès
     "Meknès": "Meknes",
     "Meknes": "Meknes",
-    
+
     // Variations pour El Hajeb
     "El Hajeb": "El-Hajeb",
-    
+
     // Variations pour Moulay Yacoub
     "Moulay Yacoub": "Moulay-Yacoub",
-    
+
     // Ajouter d'autres variations selon les besoins
 };
 
@@ -227,40 +227,40 @@ const regionNameMapping = {
     "Tanger-Tetouan-Al Hoceima": "Tanger-Tétouan-Al Hoceïma",
     "Tanger Tetouan Al Hoceima": "Tanger-Tétouan-Al Hoceïma",
     "Tanger-Tetouan": "Tanger-Tétouan-Al Hoceïma",
-    
+
     // Variations pour L'Oriental
     "Oriental": "L'Oriental",
-    
+
     // Variations pour Fès-Meknès
     "Fes-Meknes": "Fès-Meknès",
     "Fes Meknes": "Fès-Meknès",
-    
+
     // Variations pour Rabat-Salé-Kénitra
     "Rabat-Sale-Kenitra": "Rabat-Salé-Kénitra",
     "Rabat Sale Kenitra": "Rabat-Salé-Kénitra",
-    
+
     // Variations pour Béni Mellal-Khénifra
     "Beni Mellal-Khenifra": "Béni Mellal-Khénifra",
     "Beni-Mellal-Khenifra": "Béni Mellal-Khénifra",
     "Beni Mellal Khenifra": "Béni Mellal-Khénifra",
-    
+
     // Variations pour Marrakech-Safi
     "Marrakech Safi": "Marrakech-Safi",
-    
+
     // Variations pour Drâa-Tafilalet
     "Draa-Tafilalet": "Drâa-Tafilalet",
     "Draa Tafilalet": "Drâa-Tafilalet",
-    
+
     // Variations pour Souss-Massa
     "Souss Massa": "Souss-Massa",
-    
+
     // Variations pour Guelmim-Oued Noun
     "Guelmim Oued Noun": "Guelmim-Oued Noun",
-    
+
     // Variations pour Laâyoune-Sakia El Hamra
     "Laayoune-Sakia El Hamra": "Laâyoune-Sakia El Hamra",
     "Laayoune Sakia El Hamra": "Laâyoune-Sakia El Hamra",
-    
+
     // Variations pour Dakhla-Oued Ed-Dahab
     "Dakhla-Oued Ed Dahab": "Dakhla-Oued Ed-Dahab",
     "Dakhla Oued Ed Dahab": "Dakhla-Oued Ed-Dahab",
@@ -270,22 +270,22 @@ const regionNameMapping = {
 // Fonction pour normaliser les noms de provinces
 function normalizeProvinceName(name) {
     if (!name) return '';
-    
+
     // Nettoyer le nom (enlever les espaces superflus, etc.)
     const cleanName = name.trim();
-    
+
     // Vérifier si le nom est dans la table de correspondance
     if (provinceNameMapping[cleanName]) {
         return provinceNameMapping[cleanName];
     }
-    
+
     // Si le nom n'est pas dans la table de correspondance, essayer de trouver une correspondance partielle
     for (const key in provinceNameMapping) {
         if (cleanName.includes(key) || key.includes(cleanName)) {
             return provinceNameMapping[key];
         }
     }
-    
+
     // Si aucune correspondance n'est trouvée, retourner le nom original
     return cleanName;
 }
@@ -293,9 +293,9 @@ function normalizeProvinceName(name) {
 // Fonction pour normaliser le nom de la province pour la comparaison
 function normalizeProvinceName(name) {
     if (!name) return '';
-    
+
     const cleanName = name.trim();
-    
+
     // Table de correspondance spécifique pour les provinces problématiques
     const provinceFixMapping = {
         "El-Kelâa-des-Sraghna": "El-Kelâa-des--Sraghna",
@@ -303,17 +303,17 @@ function normalizeProvinceName(name) {
         "El Kelaa des Sraghna": "El-Kelâa-des--Sraghna",
         "El-Kelâa-des--Sraghna": "El-Kelâa-des--Sraghna"
     };
-    
+
     // Vérifier d'abord dans la table de correspondance spécifique
     if (provinceFixMapping[cleanName]) {
         return provinceFixMapping[cleanName];
     }
-    
+
     // Cas spécial pour El-Kelâa-des-Sraghna
     if (cleanName.toLowerCase().includes("el kelaa") || cleanName.toLowerCase().includes("kelaa")) {
         return "El-Kelâa-des--Sraghna";
     }
-    
+
     // Sinon, retourner le nom nettoyé
     return cleanName;
 }
@@ -321,11 +321,11 @@ function normalizeProvinceName(name) {
 // Fonction pour normaliser le nom de la région pour la comparaison
 function normalizeRegionName(name) {
     if (!name) return '';
-    
+
     const cleanName = name.trim();
-    
+
     console.log(`normalizeRegionName - Nom original: '${name}', nettoyé: '${cleanName}'`);
-    
+
     // Table de correspondance spécifique pour les régions problématiques
     const regionFixMapping = {
         "Tangier-Tetouan-Al Hoceima": "Tanger-Tétouan-Al Hoceïma",
@@ -339,24 +339,24 @@ function normalizeRegionName(name) {
         "Fes-Meknes": "Fès-Meknès",
         "Fes Meknes": "Fès-Meknès"
     };
-    
+
     // Vérifier d'abord dans la table de correspondance spécifique
     if (regionFixMapping[cleanName]) {
         return regionFixMapping[cleanName];
     }
-    
+
     // Vérifier si le nom est dans la table de correspondance générale
     if (regionNameMapping[cleanName]) {
         return regionNameMapping[cleanName];
     }
-    
+
     // Si le nom n'est pas dans la table de correspondance, essayer de trouver une correspondance partielle
     for (const key in regionNameMapping) {
         if (cleanName.includes(key) || key.includes(cleanName)) {
             return regionNameMapping[key];
         }
     }
-    
+
     // Si aucune correspondance n'est trouvée, retourner le nom original
     return cleanName;
 }
@@ -386,7 +386,7 @@ const regionCodeMapping = {
     "Guelmim-Oued Noun": "10",
     "Laâyoune-Sakia El Hamra": "11",
     "Dakhla-Oued Ed-Dahab": "12",
-    
+
     // Noms en anglais
     "Tangier-Tetouan-Al Hoceima": "01",
     "Oriental": "02",
@@ -529,28 +529,28 @@ function loadRegionDetails() {
 // Fonction pour récupérer les provinces d'une région et calculer les statistiques
 function getProvincesForRegion(regionName) {
     if (!provinceDetails) return { provinces: [], stats: null };
-    
+
     // Normaliser le nom de la région pour la comparaison
     const normalizedRegionName = normalizeRegionName(regionName);
     console.log(`Recherche des provinces pour la région: ${regionName}, normalisé: ${normalizedRegionName}`);
-    
+
     // Liste pour stocker les provinces de la région
     const provinces = [];
-    
+
     // Variables pour calculer les statistiques de la région
     let totalPopulation = 0;
     let totalSuperficie = 0;
     let chefLieu = '';
     let maxPopulation = 0;
-    
+
     // Parcourir toutes les provinces
     for (const provinceName in provinceDetails) {
         const provinceData = provinceDetails[provinceName];
-        
+
         // Vérifier si la province appartient à la région
         if (provinceData.region) {
             const provinceRegion = normalizeRegionName(provinceData.region);
-            
+
             if (provinceRegion === normalizedRegionName) {
                 // Ajouter la province à la liste
                 provinces.push({
@@ -560,16 +560,16 @@ function getProvincesForRegion(regionName) {
                     densite: provinceData.densite || 0,
                     chef_lieu: provinceData.chef_lieu || ''
                 });
-                
+
                 // Mettre à jour les statistiques de la région
                 if (provinceData.population) {
                     totalPopulation += provinceData.population;
                 }
-                
+
                 if (provinceData.superficie) {
                     totalSuperficie += provinceData.superficie;
                 }
-                
+
                 // Déterminer le chef-lieu de la région (la province avec la plus grande population)
                 if (provinceData.population > maxPopulation) {
                     maxPopulation = provinceData.population;
@@ -578,36 +578,36 @@ function getProvincesForRegion(regionName) {
             }
         }
     }
-    
+
     // Si aucune province n'a été trouvée dans le fichier province_details.json,
     // utiliser la table de correspondance des provinces par région
     if (provinces.length === 0) {
         console.log(`Aucune province trouvée dans province_details.json pour la région ${normalizedRegionName}`);
-        
+
         // Correction spécifique pour la région de Rabat
         let lookupRegionName = normalizedRegionName;
         if (normalizedRegionName.includes('Rabat') || normalizedRegionName === 'Rabat') {
             lookupRegionName = 'Rabat-Salé-Kénitra';
             console.log(`Application de la correction spécifique pour Rabat: utilisation de '${lookupRegionName}'`);
         }
-        
+
         console.log(`Vérification si la région existe dans regionProvincesMapping: ${regionProvincesMapping[lookupRegionName] ? 'Oui' : 'Non'}`);
-        
+
         if (regionProvincesMapping[lookupRegionName]) {
             console.log(`Utilisation de la table de correspondance pour la région ${lookupRegionName}`);
-            
+
             // Ajouter les provinces de la table de correspondance
             const mappedProvinces = regionProvincesMapping[lookupRegionName];
             provinces.push(...mappedProvinces);
-        
+
             // Recalculer les statistiques de la région
             totalPopulation = 0;
             let chefLieuProvince = null;
-            
+
             for (const province of mappedProvinces) {
                 if (province.population) {
                     totalPopulation += province.population;
-                    
+
                     // Déterminer le chef-lieu de la région (la province avec la plus grande population)
                     if (province.population > maxPopulation) {
                         maxPopulation = province.population;
@@ -615,17 +615,17 @@ function getProvincesForRegion(regionName) {
                     }
                 }
             }
-            
+
             // Utiliser le nom de la province la plus peuplée comme chef-lieu de la région
             if (chefLieuProvince) {
                 chefLieu = chefLieuProvince.nom;
             }
         }
     }
-    
+
     // Calculer la densité de population de la région
     const densite = totalSuperficie > 0 ? Math.round(totalPopulation / totalSuperficie) : 0;
-    
+
     // Créer l'objet de statistiques de la région
     const stats = {
         population: totalPopulation,
@@ -633,13 +633,13 @@ function getProvincesForRegion(regionName) {
         densite: densite,
         chef_lieu: chefLieu
     };
-    
+
     // Trier les provinces par population décroissante
     provinces.sort((a, b) => b.population - a.population);
-    
+
     console.log(`Provinces trouvées pour la région ${normalizedRegionName}:`, provinces);
     console.log(`Statistiques calculées pour la région ${normalizedRegionName}:`, stats);
-    
+
     return { provinces, stats };
 }
 
@@ -688,19 +688,19 @@ function selectRegion(e) {
     if (selectedRegion) {
         regionsLayer.resetStyle(selectedRegion);
     }
-    
+
     const layer = e.target;
     selectedRegion = layer;
-    
+
     layer.setStyle({
         weight: 5,
         color: '#666',
         dashArray: '',
         fillOpacity: 0.9
     });
-    
+
     showRegionInfo(e);
-    
+
     // Charger les provinces de la région sélectionnée
     const properties = e.target.feature.properties;
     const regionName = properties.name_2 || properties.localnam_2;
@@ -715,44 +715,44 @@ function showRegionInfo(e) {
     // Utiliser name_2 ou id comme identifiant de région
     let regionName = properties.name_2 || properties.localnam_2;
     const regionId = properties.id || properties.cartodb_id;
-    
+
     // Correction spécifique pour la région de Rabat
     if (regionName && (regionName.includes('Rabat') || regionId === '04')) {
         console.log('Détection de la région de Rabat, application de la correction spécifique');
         regionName = 'Rabat-Salé-Kénitra';
     }
-    
+
     // Afficher toutes les propriétés pour débogage
     console.log('Toutes les propriétés de la région:', properties);
-    
+
     // Normaliser le nom de la région
     const normalizedRegionName = normalizeRegionName(regionName);
     console.log(`Nom de région détecté: ${regionName}, normalisé: ${normalizedRegionName}`);
     regionName = normalizedRegionName; // Utiliser le nom normalisé
-    
+
     // Afficher directement le nom de la région depuis les propriétés GeoJSON
     let html = `<h3>${regionName}</h3>`;
-    
+
     // Récupérer les provinces et les statistiques de la région
     const { provinces, stats } = getProvincesForRegion(regionName);
-    
+
     // Récupérer le code de la région pour accéder aux données du fichier region_details.json
     const regionCode = regionCodeMapping[regionName];
     const regionData = regionCode && regionDetails[regionCode] ? regionDetails[regionCode] : null;
-    
+
     // Déterminer les valeurs à afficher
     // Pour la population, prioriser les statistiques calculées à partir des provinces
     const population = stats && stats.population ? stats.population : (regionData && regionData.population ? regionData.population : null);
-    
+
     // Pour la superficie, utiliser uniquement les données du fichier region_details.json
     const superficie = regionData && regionData.superficie ? regionData.superficie : null;
-    
+
     // Pour la densité, recalculer en fonction de la population et de la superficie
     const densite = population && superficie ? Math.round(population / superficie) : (regionData && regionData.densite ? regionData.densite : null);
-    
+
     // Pour le chef-lieu, prioriser les données du fichier region_details.json
     const chefLieu = regionData && regionData.chef_lieu ? regionData.chef_lieu : (stats && stats.chef_lieu ? stats.chef_lieu : null);
-    
+
     // Ajouter les détails de la région
     html += `
         <div class="region-detail"><strong>Population:</strong> ${population ? population.toLocaleString() : 'Non disponible'} habitants</div>
@@ -760,18 +760,18 @@ function showRegionInfo(e) {
         <div class="region-detail"><strong>Densité:</strong> ${densite ? densite.toLocaleString() : 'Non disponible'} hab/km²</div>
         <div class="region-detail"><strong>Chef-lieu:</strong> ${chefLieu || 'Non disponible'}</div>
     `;
-    
+
     // Ajouter les provinces de la région
     if (provinces && provinces.length > 0) {
         html += `
         <h4>Provinces de la région:</h4>
         <ul class="provinces-list">
         `;
-        
+
         provinces.forEach(province => {
             html += `<li>${province.nom} <span class="province-population">(${province.population.toLocaleString()} hab.)</span></li>`;
         });
-        
+
         html += `</ul>`;
     } else {
         console.error(`Aucune province trouvée pour la région ${regionName}`);
@@ -809,7 +809,7 @@ if (energie) {
 
 
 
-    
+
     // Afficher les informations dans le panneau latéral
     document.getElementById('region-info').innerHTML = html;
 }
@@ -828,7 +828,7 @@ function loadProvinces(regionName) {
     // D'abord normaliser le nom de la région
     const normalizedRegionName = normalizeRegionName(regionName);
     console.log(`Chargement des provinces pour la région: ${regionName}, normalisé: ${normalizedRegionName}`);
-    
+
     // Table de correspondance entre les noms des régions normalisés et les noms de fichiers
     const regionFileMapping = {
         // Noms en français
@@ -844,7 +844,7 @@ function loadProvinces(regionName) {
         "Casablanca-Settat": "casablanca-settat",
         "Rabat-Salé-Kénitra": "rabat-sale-kenitra",
         "L'Oriental": "oriental",
-        
+
         // Noms en anglais
         "Dakhla-Oued Ed Dahab": "eddakhla-oued-eddahab",
         "Fez-Meknes": "fes-meknes",
@@ -860,7 +860,7 @@ function loadProvinces(regionName) {
         "Rabat-Sale-Kenitra": "rabat-sale-kenitra",
         "Oriental": "oriental"
     };
-    
+
     // Utiliser la table de correspondance ou formater le nom de la région
     let formattedRegionName;
     if (regionFileMapping[normalizedRegionName]) {
@@ -871,10 +871,10 @@ function loadProvinces(regionName) {
             .replace(/\s+/g, '-') // Remplacer les espaces par des tirets
             .replace(/[^a-z0-9-]/g, ''); // Supprimer les caractères spéciaux
     }
-    
+
     // Construire le chemin du fichier GeoJSON des provinces
     const provincesFile = `/static/data/provinces/${formattedRegionName}_provinces.geojson`;
-    
+
     // Charger le fichier GeoJSON des provinces
     fetch(provincesFile)
         .then(response => {
@@ -888,7 +888,7 @@ function loadProvinces(regionName) {
             if (regionsLayer) {
                 map.removeLayer(regionsLayer);
             }
-            
+
             // Afficher la couche des provinces
             provincesLayer = L.geoJSON(data, {
                 style: style,
@@ -901,33 +901,33 @@ function loadProvinces(regionName) {
                             if (selectedProvince) {
                                 provincesLayer.resetStyle(selectedProvince);
                             }
-                            
+
                             selectedProvince = e.target;
-                            
+
                             e.target.setStyle({
                                 weight: 5,
                                 color: '#666',
                                 dashArray: '',
                                 fillOpacity: 0.9
                             });
-                            
+
                             // Afficher les informations de la province
                             const properties = e.target.feature.properties;
-                            
+
                             // Afficher les propriétés dans la console pour débogage
                             console.log('Propriétés de la province:', properties);
-                            
+
                             // Essayer de trouver le nom de la province dans différentes propriétés possibles
                             let provinceName = 'Province';
-                            
+
                             // Parcourir toutes les propriétés pour trouver celle qui contient le nom
                             console.log('Toutes les propriétés disponibles:', properties);
-                            
+
                             for (const key in properties) {
                                 // Rechercher des clés qui pourraient contenir le nom de la province
-                                if (key.toLowerCase().includes('name') || 
-                                    key.toLowerCase().includes('nom') || 
-                                    key.toLowerCase().includes('province') || 
+                                if (key.toLowerCase().includes('name') ||
+                                    key.toLowerCase().includes('nom') ||
+                                    key.toLowerCase().includes('province') ||
                                     key.toLowerCase() === 'id_2') {
                                     if (properties[key] && typeof properties[key] === 'string') {
                                         provinceName = properties[key];
@@ -936,73 +936,73 @@ function loadProvinces(regionName) {
                                     }
                                 }
                             }
-                            
+
                             // Si aucun nom n'a été trouvé, essayer d'utiliser d'autres propriétés
                             if (provinceName === 'Province') {
-                                provinceName = properties.name || properties.Province || properties.NAME || 
-                                               properties.name_2 || properties.localnam_2 || properties.id_2 || 
+                                provinceName = properties.name || properties.Province || properties.NAME ||
+                                               properties.name_2 || properties.localnam_2 || properties.id_2 ||
                                                'Province ' + (properties.id || '');
                             }
-                            
+
                             // Créer un HTML plus détaillé pour la province
                             let html = `<h3>${provinceName}</h3>`;
-                            
+
                             // Ajouter la région parente
                             if (selectedRegion && selectedRegion.feature && selectedRegion.feature.properties) {
-                                const regionName = selectedRegion.feature.properties.name_2 || 
-                                                  selectedRegion.feature.properties.localnam_2 || 
+                                const regionName = selectedRegion.feature.properties.name_2 ||
+                                                  selectedRegion.feature.properties.localnam_2 ||
                                                   'Région';
                                 html += `<div class="province-detail"><strong>Région:</strong> ${regionName}</div>`;
                             }
-                            
+
 
 
                             // Normaliser le nom de la province pour la recherche dans le fichier JSON
                             const normalizedProvinceName = normalizeProvinceName(provinceName);
                             console.log(`Nom de province détecté: ${provinceName}, normalisé: ${normalizedProvinceName}`);
-                            
+
                             // Chercher des informations supplémentaires dans le fichier province_details.json
                             let provinceInfo = provinceDetails[normalizedProvinceName];
-                            
+
                             // Vérifications spéciales pour les provinces problématiques
                             let specialProvinceName = null; // Variable pour stocker le nom spécial de la province
-                            
+
                             if (!provinceInfo) {
                                 // Cas spécial pour El-Kelâa-des-Sraghna
-                                if (provinceName.toLowerCase().includes("el kelaa") || 
-                                    provinceName.toLowerCase().includes("kelaa") || 
+                                if (provinceName.toLowerCase().includes("el kelaa") ||
+                                    provinceName.toLowerCase().includes("kelaa") ||
                                     provinceName.toLowerCase().includes("kelâa")) {
                                     specialProvinceName = "El-Kelâa-des--Sraghna";
                                     provinceInfo = provinceDetails[specialProvinceName];
                                     console.log(`Utilisation des données pour ${specialProvinceName}`);
                                 }
-                                
+
                                 // Cas spécial pour Skhirate--Temara
-                                else if (provinceName.toLowerCase().includes("skhirate") || 
-                                         provinceName.toLowerCase().includes("skhirat") || 
+                                else if (provinceName.toLowerCase().includes("skhirate") ||
+                                         provinceName.toLowerCase().includes("skhirat") ||
                                          provinceName.toLowerCase().includes("temara")) {
                                     specialProvinceName = "Skhirate--Temara";
                                     provinceInfo = provinceDetails[specialProvinceName];
                                     console.log(`Utilisation des données pour ${specialProvinceName}`);
                                 }
-                                
+
                                 // Cas spécial pour Inezgane--Ait-Melloul
-                                else if (provinceName.toLowerCase().includes("inezgane") || 
+                                else if (provinceName.toLowerCase().includes("inezgane") ||
                                          provinceName.toLowerCase().includes("ait melloul")) {
                                     specialProvinceName = "Inezgane--Ait-Melloul";
                                     provinceInfo = provinceDetails[specialProvinceName];
                                     console.log(`Utilisation des données pour ${specialProvinceName}`);
                                 }
-                                
+
                                 // Cas spécial pour Chtouka--Ait-Baha
-                                else if (provinceName.toLowerCase().includes("chtouka") || 
+                                else if (provinceName.toLowerCase().includes("chtouka") ||
                                          provinceName.toLowerCase().includes("ait baha")) {
                                     specialProvinceName = "Chtouka--Ait-Baha";
                                     provinceInfo = provinceDetails[specialProvinceName];
                                     console.log(`Utilisation des données pour ${specialProvinceName}`);
                                 }
                             }
-                            
+
                             if (provinceInfo) {
                                 // Utiliser les informations du fichier province_details.json
                                 // Ajouter les données économiques harmonisées
@@ -1032,15 +1032,15 @@ if (energie) {
                                 if (provinceInfo.population) {
                                     html += `<div class="province-detail"><strong>Population:</strong> ${Number(provinceInfo.population).toLocaleString()} habitants</div>`;
                                 }
-                                
+
                                 if (provinceInfo.superficie) {
                                     html += `<div class="province-detail"><strong>Superficie:</strong> ${Number(provinceInfo.superficie).toLocaleString()} km²</div>`;
                                 }
-                                
+
                                 if (provinceInfo.densite) {
                                     html += `<div class="province-detail"><strong>Densité:</strong> ${Number(provinceInfo.densite).toLocaleString()} hab/km²</div>`;
                                 }
-                                
+
                                 if (provinceInfo.chef_lieu) {
                                     html += `<div class="province-detail"><strong>Chef-lieu:</strong> ${provinceInfo.chef_lieu}</div>`;
                                 }
@@ -1049,28 +1049,28 @@ if (energie) {
                                 if (properties.population) {
                                     html += `<div class="province-detail"><strong>Population:</strong> ${Number(properties.population).toLocaleString()} habitants</div>`;
                                 }
-                                
+
                                 if (properties.area || properties.superficie) {
                                     const area = properties.area || properties.superficie;
                                     html += `<div class="province-detail"><strong>Superficie:</strong> ${Number(area).toLocaleString()} km²</div>`;
                                 }
-                                
+
                                 if (properties.chef_lieu || properties.capital) {
                                     const capital = properties.chef_lieu || properties.capital;
                                     html += `<div class="province-detail"><strong>Chef-lieu:</strong> ${capital}</div>`;
                                 }
                             }
-                            
+
                             // Ajouter un bouton pour voir toutes les propriétés (pour débogage)
                             html += `<div class="province-detail" style="margin-top: 15px;">
                                         <button onclick="showAllProperties()" style="padding: 5px; background-color: #f0f0f0; border: 1px solid #ccc; border-radius: 3px; cursor: pointer;">Voir toutes les propriétés</button>
                                      </div>`;
-                            
+
                             document.getElementById('region-info').innerHTML = html;
-                            
+
                             // Stocker les propriétés dans une variable globale pour le débogage
                             window.currentProperties = properties;
-                            
+
                             // Afficher les informations météo pour cette province
                             // Si nous avons détecté une province spéciale, utiliser son nom pour la météo
                             if (specialProvinceName) {
@@ -1083,13 +1083,13 @@ if (energie) {
                     });
                 }
             }).addTo(map);
-            
+
             // Ajuster la vue de la carte pour montrer toutes les provinces
             map.fitBounds(provincesLayer.getBounds());
-            
+
             // Mettre à jour l'état de la vue
             currentView = 'provinces';
-            
+
             // Afficher le bouton de retour
             document.getElementById('back-to-regions').style.display = 'block';
         })
@@ -1105,10 +1105,10 @@ function showRegions() {
     if (provincesLayer) {
         map.removeLayer(provincesLayer);
     }
-    
+
     // Réinitialiser les sélections
     selectedProvince = null;
-    
+
     // Afficher la couche des régions
     if (regionsLayer) {
         regionsLayer.addTo(map);
@@ -1117,13 +1117,13 @@ function showRegions() {
         // Si la couche des régions n'existe pas, la charger
         loadRegions();
     }
-    
+
     // Mettre à jour l'état de la vue
     currentView = 'regions';
-    
+
     // Masquer le bouton de retour
     document.getElementById('back-to-regions').style.display = 'none';
-    
+
     // Effacer les informations affichées
     document.getElementById('region-info').innerHTML = '<p>Sélectionnez une région pour voir ses informations</p>';
 }
@@ -1139,7 +1139,7 @@ function loadRegions() {
                 style: style,
                 onEachFeature: onEachFeature
             }).addTo(map);
-            
+
             // Ajuster la vue de la carte pour montrer toutes les régions
             map.fitBounds(regionsLayer.getBounds());
         })
@@ -1157,24 +1157,24 @@ function showAllProperties() {
     if (window.currentProperties) {
         // Sauvegarder le contenu actuel pour pouvoir y revenir
         savedProvinceInfo = document.getElementById('region-info').innerHTML;
-        
+
         // Créer le contenu avec toutes les propriétés
         let html = '<h3>Toutes les propriétés</h3>';
-        
+
         // Ajouter le bouton de retour en haut
         html += `<div class="province-detail" style="margin-bottom: 15px;">
                     <button onclick="backToProvinceInfo()" style="padding: 5px; background-color: #f0f0f0; border: 1px solid #ccc; border-radius: 3px; cursor: pointer;">
                         <i class="fas fa-arrow-left" style="margin-right: 5px;"></i> Retour
                     </button>
                  </div><ul>`;
-        
+
         // Afficher toutes les propriétés
         for (const key in window.currentProperties) {
             html += `<li><strong>${key}:</strong> ${window.currentProperties[key]}</li>`;
         }
-        
+
         html += '</ul>';
-        
+
         document.getElementById('region-info').innerHTML = html;
     }
 }
