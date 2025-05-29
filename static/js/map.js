@@ -760,12 +760,7 @@ function showRegionInfo(e) {
         <div class="region-detail"><strong>Densité:</strong> ${densite ? densite.toLocaleString() : 'Non disponible'} hab/km²</div>
         <div class="region-detail"><strong>Chef-lieu:</strong> ${chefLieu || 'Non disponible'}</div>
     `;
-    html += `
-  <h4>Graphique comparatif</h4>
-  <div id="region-graph-container">
-    <canvas id="regionChart" width="400" height="300"></canvas>
-  </div>
-`;
+
 
     // Ajouter les provinces de la région
     if (provinces && provinces.length > 0) {
@@ -819,29 +814,7 @@ if (energie) {
     // Afficher les informations dans le panneau latéral
  document.getElementById('region-info').innerHTML = html;
 
-setTimeout(() => {
-  const ctx = document.getElementById('regionChart')?.getContext('2d');
-  if (!ctx) return;
 
-  if (window.regionChartInstance) window.regionChartInstance.destroy();
-
-  window.regionChartInstance = new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: ['Population', 'Superficie', 'Densité'],
-      datasets: [{
-        label: 'Valeurs régionales',
-        data: [population, superficie, densite],
-        backgroundColor: ['#4caf50', '#2196f3', '#ff9800']
-      }]
-    },
-    options: {
-      responsive: true,
-      plugins: { legend: { display: false } },
-      scales: { y: { beginAtZero: true } }
-    }
-  });
-}, 0);
 
 
 }
@@ -1011,11 +984,7 @@ function loadProvinces(regionName) {
 
                             // Créer un HTML plus détaillé pour la province
                             let html = `<h3>${provinceName}</h3>`;
-                            html += `
-    <div id="province-graph-container" style="margin-top: 15px;">
-        <canvas id="provinceChart" width="400" height="300"></canvas>
-    </div>
-`;
+
 
 
                             // Ajouter la région parente
@@ -1140,38 +1109,7 @@ if (energie) {
                             document.getElementById('region-info').innerHTML = html;
                             // Clear and draw the province chart separately
 // Render the province chart into its separate container (outside of region-info)
-setTimeout(() => {
-  const container = document.getElementById('province-chart-container');
-  if (!container || !provinceInfo?.population || !provinceInfo?.superficie) return;
 
-  container.innerHTML = `<canvas id="provinceChart" width="400" height="300"></canvas>`;
-  const ctx = document.getElementById('provinceChart').getContext('2d');
-
-  const population = provinceInfo.population;
-  const superficie = provinceInfo.superficie;
-  const densite = Math.round(population / superficie);
-
-  if (window.provinceChartInstance) {
-    window.provinceChartInstance.destroy();
-  }
-
-  window.provinceChartInstance = new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: ['Population', 'Superficie', 'Densité'],
-      datasets: [{
-        label: 'Valeurs provinciales',
-        data: [population, superficie, densite],
-        backgroundColor: ['#66bb6a', '#42a5f5', '#ffa726']
-      }]
-    },
-    options: {
-      responsive: true,
-      plugins: { legend: { display: false } },
-      scales: { y: { beginAtZero: true } }
-    }
-  });
-}, 100);
 
 
 
