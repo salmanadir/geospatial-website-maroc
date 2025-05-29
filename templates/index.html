@@ -20,8 +20,14 @@
             <div id="map"></div>
             <div id="info-panel">
                 <h2>Informations sur la région</h2>
-                <div id="region-info">
-                    <p>Sélectionnez une région sur la carte pour afficher ses informations.</p>
+                <div class="region-content">
+                    <div id="region-info">
+                        <p>Sélectionnez une région sur la carte pour afficher ses informations.</p>
+                    </div>
+                    <!-- Conteneur pour le graphique à côté des infos -->
+                    <div id="chart-container" style="display: none;">
+                        <canvas id="provinces-chart"></canvas>
+                    </div>
                 </div>
             </div>
         </div>
@@ -32,8 +38,14 @@
     </div>
 
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <!-- Ajout de Chart.js pour les graphiques -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Leaflet.heat a été supprimé car non utilisé -->
     <script src="{{ url_for('static', filename='js/map.js') }}"></script>
     <script src="{{ url_for('static', filename='js/weather.js') }}"></script>
     <script src="{{ url_for('static', filename='js/province-fixes.js') }}"></script>
+    <!-- Ajout du fichier pour les graphiques -->
+    <script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+
 </body>
 </html>

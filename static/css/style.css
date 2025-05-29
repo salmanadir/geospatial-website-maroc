@@ -74,6 +74,47 @@ header h1 {
     color: #2c3e50;
 }
 
+/* Styles pour la disposition côte à côte des infos et du graphique */
+.region-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+#region-info {
+    flex: 1;
+    min-width: 250px;
+}
+
+#chart-container {
+    flex: 1;
+    min-width: 300px;
+    height: 300px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.provinces-list {
+    list-style-type: none;
+    padding-left: 10px;
+    margin-top: 10px;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.provinces-list li {
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+.province-population {
+    font-size: 0.85em;
+    color: #666;
+}
+
 footer {
     text-align: center;
     margin-top: 30px;
@@ -92,3 +133,5 @@ footer {
         height: 400px;
     }
 }
+
+/* Les styles pour les contrôles UV ont été supprimés */

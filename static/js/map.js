@@ -29,7 +29,8 @@ fetch('/api/maroc')
     });
 
 // Variables pour stocker les couches GeoJSON actives
-let regionsLayer;
+// Définir regionsLayer comme variable globale pour permettre l'accès depuis d'autres scripts
+window.regionsLayer = null;
 let provincesLayer;
 let selectedRegion = null;
 let selectedProvince = null;
@@ -281,16 +282,39 @@ function normalizeRegionName(name) {
     
     // Table de correspondance spécifique pour les régions problématiques
     const regionFixMapping = {
+        // Variantes pour Tanger-Tétouan-Al Hoceïma
         "Tangier-Tetouan-Al Hoceima": "Tanger-Tétouan-Al Hoceïma",
+        "Tanger-Tetouan-Al Hoceima": "Tanger-Tétouan-Al Hoceïma",
+        "Tanger Tetouan Al Hoceima": "Tanger-Tétouan-Al Hoceïma",
+        "Tangier Tetouan Al Hoceima": "Tanger-Tétouan-Al Hoceïma",
+        "Tanger": "Tanger-Tétouan-Al Hoceïma",
+        "Tangier": "Tanger-Tétouan-Al Hoceïma",
+        
+        // Variantes pour Rabat-Salé-Kénitra
         "Rabat-Sale-Kenitra": "Rabat-Salé-Kénitra",
         "Rabat Sale Kenitra": "Rabat-Salé-Kénitra",
         "Rabat": "Rabat-Salé-Kénitra",
+        
+        // Variantes pour Béni Mellal-Khénifra
         "Beni Mellal-Khenifra": "Béni Mellal-Khénifra",
+        "Beni Mellal Khenifra": "Béni Mellal-Khénifra",
+        
+        // Variantes pour Laâyoune-Sakia El Hamra
         "Laayoune-Sakia El Hamra": "Laâyoune-Sakia El Hamra",
+        "Laayoune Sakia El Hamra": "Laâyoune-Sakia El Hamra",
+        
+        // Variantes pour Dakhla-Oued Ed-Dahab
         "Dakhla-Oued Ed Dahab": "Dakhla-Oued Ed-Dahab",
+        "Dakhla Oued Ed Dahab": "Dakhla-Oued Ed-Dahab",
+        "Eddakhla-Oued Eddahab": "Dakhla-Oued Ed-Dahab",
+        
+        // Variantes pour Fès-Meknès
         "Fez-Meknes": "Fès-Meknès",
         "Fes-Meknes": "Fès-Meknès",
-        "Fes Meknes": "Fès-Meknès"
+        "Fes Meknes": "Fès-Meknès",
+        "Fez Meknes": "Fès-Meknès",
+        "Fes": "Fès-Meknès",
+        "Fez": "Fès-Meknès"
     };
     
     // Vérifier d'abord dans la table de correspondance spécifique
@@ -496,7 +520,57 @@ function getProvincesForRegion(regionName) {
     let chefLieu = '';
     let maxPopulation = 0;
     
-    // Parcourir toutes les provinces
+    // Débogage pour Tanger
+    if (regionName.includes('Tanger') || regionName.includes('Tangier')) {
+        console.log('Débogage spécial pour Tanger:', regionName);
+    }
+    
+    // Cas spécial pour Tanger-Tétouan-Al Hoceïma
+    if (regionName.includes('Tanger') || regionName.includes('Tangier') || 
+        normalizedRegionName.includes('tanger') || normalizedRegionName.includes('tangier')) {
+        // Recherche directe des provinces de Tanger dans le fichier province_details.json
+        for (const provinceName in provinceDetails) {
+            const provinceData = provinceDetails[provinceName];
+            if (provinceData.region && provinceData.region.includes('Tanger')) {
+                console.log(`Province de Tanger trouvée: ${provinceName}`);
+                provinces.push({
+                    nom: provinceName,
+                    population: provinceData.population || 0,
+                    superficie: provinceData.superficie || 0,
+                    densite: provinceData.densite || 0,
+                    chef_lieu: provinceData.chef_lieu || ''
+                });
+                
+                // Mettre à jour les statistiques de la région
+                if (provinceData.population) {
+                    totalPopulation += provinceData.population;
+                }
+                if (provinceData.superficie) {
+                    totalSuperficie += provinceData.superficie;
+                }
+                if (provinceData.population > maxPopulation) {
+                    maxPopulation = provinceData.population;
+                    chefLieu = provinceData.chef_lieu || '';
+                }
+            }
+        }
+        
+        // Si des provinces ont été trouvées, retourner les résultats immédiatement
+        if (provinces.length > 0) {
+            console.log(`${provinces.length} provinces trouvées pour Tanger`);
+            return {
+                provinces: provinces,
+                stats: {
+                    population: totalPopulation,
+                    superficie: totalSuperficie,
+                    densite: totalSuperficie > 0 ? Math.round(totalPopulation / totalSuperficie) : 0,
+                    chef_lieu: chefLieu
+                }
+            };
+        }
+    }
+    
+    // Parcourir toutes les provinces (pour les autres régions)
     for (const provinceName in provinceDetails) {
         const provinceData = provinceDetails[provinceName];
         
@@ -504,7 +578,14 @@ function getProvincesForRegion(regionName) {
         if (provinceData.region) {
             const provinceRegion = normalizeRegionName(provinceData.region);
             
-            if (provinceRegion === normalizedRegionName) {
+            // Comparaison exacte ou partielle des noms de régions
+            if (provinceRegion === normalizedRegionName ||
+                provinceRegion.includes(normalizedRegionName) ||
+                normalizedRegionName.includes(provinceRegion) ||
+                // Correspondances spécifiques pour certaines régions problématiques
+                (normalizedRegionName.includes('fes') && provinceRegion.includes('fes')) ||
+                (normalizedRegionName.includes('fez') && provinceRegion.includes('fes')) ||
+                (normalizedRegionName.includes('dakhla') && provinceRegion.includes('dakhla'))) {
                 // Ajouter la province à la liste
                 provinces.push({
                     nom: provinceName,
@@ -631,7 +712,7 @@ function highlightFeature(e) {
 // Fonction pour réinitialiser le style d'une région
 function resetHighlight(e) {
     if (selectedRegion !== e.target) {
-        regionsLayer.resetStyle(e.target);
+        window.regionsLayer.resetStyle(e.target);
     }
 }
 
@@ -639,7 +720,7 @@ function resetHighlight(e) {
 function selectRegion(e) {
     // Réinitialiser le style de la région précédemment sélectionnée
     if (selectedRegion) {
-        regionsLayer.resetStyle(selectedRegion);
+        window.regionsLayer.resetStyle(selectedRegion);
     }
     
     const layer = e.target;
@@ -690,7 +771,22 @@ function showRegionInfo(e) {
     const { provinces, stats } = getProvincesForRegion(regionName);
     
     // Récupérer le code de la région pour accéder aux données du fichier region_details.json
-    const regionCode = regionCodeMapping[regionName];
+    let regionCode = regionCodeMapping[regionName];
+    
+    // Si le code n'est pas trouvé directement, essayer de trouver une correspondance approximative
+    if (!regionCode) {
+        // Parcourir toutes les clés dans regionCodeMapping
+        for (const key in regionCodeMapping) {
+            const normalizedKey = normalizeRegionName(key);
+            if (normalizedKey.includes(normalizedRegionName) || normalizedRegionName.includes(normalizedKey)) {
+                regionCode = regionCodeMapping[key];
+                console.log(`Correspondance trouvée pour ${regionName} avec ${key}: ${regionCode}`);
+                break;
+            }
+        }
+    }
+    
+    console.log(`Code de région pour ${regionName}: ${regionCode}`);
     const regionData = regionCode && regionDetails[regionCode] ? regionDetails[regionCode] : null;
     
     // Déterminer les valeurs à afficher
@@ -714,6 +810,7 @@ function showRegionInfo(e) {
         <div class="region-detail"><strong>Chef-lieu:</strong> ${chefLieu || 'Non disponible'}</div>
     `;
     
+
     // Ajouter les provinces de la région
     if (provinces && provinces.length > 0) {
         html += `
@@ -732,6 +829,19 @@ function showRegionInfo(e) {
     
     // Afficher les informations dans le panneau latéral
     document.getElementById('region-info').innerHTML = html;
+    
+    // Mettre à jour le graphique des provinces pour cette région
+    console.log('Tentative de mise à jour du graphique depuis showRegionInfo');
+    
+    // Utiliser setTimeout pour s'assurer que le DOM est mis à jour avant d'afficher le graphique
+    setTimeout(function() {
+        if (typeof updateChartForRegion === 'function') {
+            console.log('Appel de updateChartForRegion pour', regionName);
+            updateChartForRegion(regionName);
+        } else {
+            console.error('La fonction updateChartForRegion n\'est pas disponible');
+        }
+    }, 100);
 }
 
 // Fonction pour gérer les interactions avec chaque région
@@ -752,8 +862,6 @@ function loadProvinces(regionName) {
     // Table de correspondance entre les noms des régions normalisés et les noms de fichiers
     const regionFileMapping = {
         // Noms en français
-        "Dakhla-Oued Ed-Dahab": "eddakhla-oued-eddahab",
-        "Fès-Meknès": "fes-meknes",
         "Tanger-Tétouan-Al Hoceïma": "tanger-tetouan-al-hoceima",
         "Laâyoune-Sakia El Hamra": "laayoune-sakia-el-hamra",
         "Guelmim-Oued Noun": "guelmim-oued-noun",
@@ -764,6 +872,8 @@ function loadProvinces(regionName) {
         "Casablanca-Settat": "casablanca-settat",
         "Rabat-Salé-Kénitra": "rabat-sale-kenitra",
         "L'Oriental": "oriental",
+        "Dakhla-Oued Ed-Dahab": "eddakhla-oued-eddahab",
+        "Fès-Meknès": "fes-meknes",
         
         // Noms en anglais
         "Dakhla-Oued Ed Dahab": "eddakhla-oued-eddahab",
@@ -792,21 +902,47 @@ function loadProvinces(regionName) {
             .replace(/[^a-z0-9-]/g, ''); // Supprimer les caractères spéciaux
     }
     
-    // Construire le chemin du fichier GeoJSON des provinces
-    const provincesFile = `/static/data/provinces/${formattedRegionName}_provinces.geojson`;
+    // Construire les chemins possibles pour le fichier GeoJSON des provinces
+    const possibleFiles = [
+        `/static/data/provinces/${formattedRegionName}_provinces.geojson`,
+    ];
     
-    // Charger le fichier GeoJSON des provinces
-    fetch(provincesFile)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Fichier non trouvé: ${provincesFile}`);
-            }
-            return response.json();
-        })
+    // Ajouter des variantes spécifiques pour certaines régions problématiques
+    if (normalizedRegionName.includes('tangier') || normalizedRegionName.includes('tanger')) {
+        possibleFiles.push('/static/data/provinces/tanger-tetouan-al-hoceima_provinces.geojson');
+    }
+    if (normalizedRegionName.includes('fez') || normalizedRegionName.includes('fes')) {
+        possibleFiles.push('/static/data/provinces/fes-meknes_provinces.geojson');
+    }
+    if (normalizedRegionName.includes('dakhla') || normalizedRegionName.includes('eddakhla')) {
+        possibleFiles.push('/static/data/provinces/eddakhla-oued-eddahab_provinces.geojson');
+    }
+    
+    console.log(`Tentative de chargement des provinces pour ${normalizedRegionName}, fichiers possibles:`, possibleFiles);
+    
+    // Fonction pour essayer de charger les fichiers un par un
+    function tryLoadFile(index) {
+        if (index >= possibleFiles.length) {
+            throw new Error(`Aucun fichier de provinces trouvé pour la région ${normalizedRegionName}`);
+        }
+        
+        return fetch(possibleFiles[index])
+            .then(response => {
+                if (!response.ok) {
+                    console.warn(`Fichier non trouvé: ${possibleFiles[index]}, essai suivant...`);
+                    return tryLoadFile(index + 1);
+                }
+                console.log(`Fichier trouvé: ${possibleFiles[index]}`);
+                return response.json();
+            });
+    }
+    
+    // Commencer à essayer de charger le premier fichier
+    tryLoadFile(0)
         .then(data => {
             // Masquer la couche des régions
-            if (regionsLayer) {
-                map.removeLayer(regionsLayer);
+            if (window.regionsLayer) {
+                map.removeLayer(window.regionsLayer);
             }
             
             // Afficher la couche des provinces
@@ -833,6 +969,13 @@ function loadProvinces(regionName) {
                             
                             // Afficher les informations de la province
                             const properties = e.target.feature.properties;
+                            
+                            // Masquer le graphique lorsqu'on clique sur une province
+                            if (typeof hideChart === 'function') {
+                                hideChart();
+                            } else {
+                                document.getElementById('chart-container').style.display = 'none';
+                            }
                             
                             // Afficher les propriétés dans la console pour débogage
                             console.log('Propriétés de la province:', properties);
@@ -1006,9 +1149,9 @@ function showRegions() {
     selectedProvince = null;
     
     // Afficher la couche des régions
-    if (regionsLayer) {
-        regionsLayer.addTo(map);
-        map.fitBounds(regionsLayer.getBounds());
+    if (window.regionsLayer) {
+        window.regionsLayer.addTo(map);
+        map.fitBounds(window.regionsLayer.getBounds());
     } else {
         // Si la couche des régions n'existe pas, la charger
         loadRegions();
@@ -1031,13 +1174,13 @@ function loadRegions() {
         .then(response => response.json())
         .then(data => {
             // Ajouter les régions à la carte
-            regionsLayer = L.geoJSON(data, {
+            window.regionsLayer = L.geoJSON(data, {
                 style: style,
                 onEachFeature: onEachFeature
             }).addTo(map);
             
             // Ajuster la vue de la carte pour montrer toutes les régions
-            map.fitBounds(regionsLayer.getBounds());
+            map.fitBounds(window.regionsLayer.getBounds());
         })
         .catch(error => {
             console.error('Erreur lors du chargement des régions:', error);

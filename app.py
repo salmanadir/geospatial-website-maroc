@@ -12,6 +12,8 @@ weather_cache = {}
 
 app = Flask(__name__)
 
+
+
 # Informations générales sur le Maroc
 maroc_info = {
     "nom": "Royaume du Maroc",
@@ -145,6 +147,7 @@ def get_weather(province_name):
     except Exception as e:
         print(f"Erreur météo: {str(e)}")
         return jsonify({"error": str(e)}), 500
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=5001)
