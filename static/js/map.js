@@ -377,7 +377,7 @@ const regionCodeMapping = {
     "Tanger-Tétouan-Al Hoceïma": "01",
     "L'Oriental": "02",
     "Fès-Meknès": "03",
-    "Rabat-Salé-Kénitra": "04",
+    "Rabat-Salé-Kenitra": "04",
     "Béni Mellal-Khénifra": "05",
     "Casablanca-Settat": "06",
     "Marrakech-Safi": "07",
@@ -816,12 +816,45 @@ if (energie) {
 
 // Fonction pour gérer les interactions avec chaque région
 function onEachFeature(feature, layer) {
+    const props = feature.properties;
+    const regionName = props.name_2 || props.localnam_2 || 'Région inconnue';
+    const normalizedName = normalizeRegionName(regionName);
+    const regionCode = regionCodeMapping[normalizedName];
+    const regionData = regionCode ? regionDetails[regionCode] : null;
+
+    // Récupération des données à afficher
+    const population = regionData?.population?.toLocaleString() || 'Non dispo';
+    const superficie = regionData?.superficie?.toLocaleString() || 'Non dispo';
+    const chefLieu = regionData?.chef_lieu || 'Non dispo';
+
+    const tooltipContent = `
+        <strong>${normalizedName}</strong><br>
+        Population : ${population}<br>
+        Superficie : ${superficie} km²<br>
+        Chef-lieu : ${chefLieu}
+    `;
+    console.log("🟡 REGION NAME:", regionName);
+console.log("🟢 NORMALIZED NAME:", normalizedName);
+console.log("🔵 REGION CODE:", regionCode);
+console.log("🟣 REGION DATA:", regionData);
+
+
+    layer.bindTooltip(tooltipContent, {
+        sticky: true,
+        direction: 'top',
+        offset: [0, -10],
+        opacity: 0.9,
+        className: 'custom-tooltip'
+    });
+
     layer.on({
         mouseover: highlightFeature,
         mouseout: resetHighlight,
         click: selectRegion
     });
 }
+
+
 
 // Fonction pour charger et afficher les provinces d'une région
 function loadProvinces(regionName) {
