@@ -760,6 +760,12 @@ function showRegionInfo(e) {
         <div class="region-detail"><strong>Densité:</strong> ${densite ? densite.toLocaleString() : 'Non disponible'} hab/km²</div>
         <div class="region-detail"><strong>Chef-lieu:</strong> ${chefLieu || 'Non disponible'}</div>
     `;
+    html += `
+  <h4>Graphique comparatif</h4>
+  <div id="region-graph-container">
+    <canvas id="regionChart" width="400" height="300"></canvas>
+  </div>
+`;
 
     // Ajouter les provinces de la région
     if (provinces && provinces.length > 0) {
@@ -812,6 +818,27 @@ if (energie) {
 
     // Afficher les informations dans le panneau latéral
     document.getElementById('region-info').innerHTML = html;
+const ctx = document.getElementById('regionChart').getContext('2d');
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ['Population', 'Superficie', 'Densité'],
+    datasets: [{
+      label: 'Valeurs régionales',
+      data: [population, superficie, densite],
+      backgroundColor: ['#4caf50', '#2196f3', '#ff9800']
+    }]
+  },
+  options: {
+    responsive: true,
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
+
 }
 
 // Fonction pour gérer les interactions avec chaque région
