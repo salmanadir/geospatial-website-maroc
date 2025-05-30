@@ -331,8 +331,15 @@ header p {
 }
 
 #region-info {
-    padding: 20px;
+    max-height: calc(100vh - 60px);
+  overflow-y: auto;    /* autorise le scroll vertical */
+  overflow-x: hidden;  /* désactive le scroll horizontal si pas voulu */
+    /* espace pour la scrollbar sans cacher le texte */
+    padding: 20px 1rem 20px 20px;
+    position: relative;  /* pour le z-index */
+  z-index: 1000;
 }
+
 
 /* Cartes d'information */
 .info-card {
@@ -1042,3 +1049,33 @@ body.dark-theme {
 .view-province-details-btn:hover {
     background-color: #003d7a;
 }
+/* 1) Rendre le panneau #region-info entièrement scrollable */
+#region-info {
+  /* prendre toute la hauteur de la fenêtre */
+  height: 100vh !important;
+  /* ou, si vous avez un header fixe de 60px :
+     height: calc(100vh - 60px) !important; */
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  /* espace pour que le texte ne soit pas caché par la scrollbar */
+  padding-right: 1rem;
+  /* stacking au-dessus */
+  position: relative !important;
+  z-index: 10000 !important;
+}
+
+/* 2) S’assurer que la sidebar parent soit elle aussi sur le dessus */
+#sidebar, .sidebar {
+  position: relative !important;
+  z-index: 10000 !important;
+}
+
+/* 3) Repousser tous les contrôles Leaflet derrière */
+.leaflet-container .leaflet-control-container {
+  z-index: 0 !important;
+}
+.leaflet-container .leaflet-top,
+.leaflet-container .leaflet-bottom {
+  z-index: 0 !important;
+}
+
