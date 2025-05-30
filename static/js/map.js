@@ -753,33 +753,73 @@ function showRegionInfo(e) {
     // Pour le chef-lieu, prioriser les données du fichier region_details.json
     const chefLieu = regionData && regionData.chef_lieu ? regionData.chef_lieu : (stats && stats.chef_lieu ? stats.chef_lieu : null);
 
-    // Ajouter les détails de la région
+    // Ajouter les détails de la région avec le nouveau design en cartes
     html += `
-        <div class="region-detail"><strong>Population:</strong> ${population ? population.toLocaleString() : 'Non disponible'} habitants</div>
-        <div class="region-detail"><strong>Superficie:</strong> ${superficie ? superficie.toLocaleString() : 'Non disponible'} km²</div>
-        <div class="region-detail"><strong>Densité:</strong> ${densite ? densite.toLocaleString() : 'Non disponible'} hab/km²</div>
-        <div class="region-detail"><strong>Chef-lieu:</strong> ${chefLieu || 'Non disponible'}</div>
+        <div class="info-card">
+            <div class="info-card-header">
+                <i class="fas fa-info-circle"></i> Informations générales
+            </div>
+            <div class="info-card-body">
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-item-label">Population</div>
+                        <div class="info-item-value">${population ? population.toLocaleString() : 'Non disponible'}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-item-label">Superficie</div>
+                        <div class="info-item-value">${superficie ? superficie.toLocaleString() : 'Non disponible'} km²</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-item-label">Densité</div>
+                        <div class="info-item-value">${densite ? densite.toLocaleString() : 'Non disponible'} hab/km²</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-item-label">Chef-lieu</div>
+                        <div class="info-item-value">${chefLieu || 'Non disponible'}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     `;
 
-
-    // Ajouter les provinces de la région
+    // Afficher les provinces de la région avec un design moderne
     if (provinces && provinces.length > 0) {
+        // Ajouter la liste des provinces avec un design de dropdown
         html += `
-        <h4>Provinces de la région:</h4>
-        <ul class="provinces-list">
+        <div class="info-card">
+            <div class="info-card-header dropdown-header" id="provinces-dropdown-header">
+                <div>
+                    <i class="fas fa-map-marker-alt"></i> Provinces de la région
+                </div>
+                <i class="fas fa-chevron-down" id="provinces-dropdown-icon"></i>
+            </div>
+            <div class="provinces-dropdown" id="provinces-dropdown" style="max-height: 0px; overflow: hidden;">
         `;
-
-        provinces.forEach(province => {
-            html += `<li>${province.nom} <span class="province-population">(${province.population.toLocaleString()} hab.)</span></li>`;
+        
+        // Trier les provinces par population (de la plus peuplée à la moins peuplée)
+        const sortedProvinces = [...provinces].sort((a, b) => b.population - a.population);
+        
+        sortedProvinces.forEach(province => {
+            html += `
+                <div class="province-item" data-province="${province.nom}">
+                    <div class="province-name">${province.nom}</div>
+                    <div class="province-population">${province.population.toLocaleString()} hab.</div>
+                </div>
+            `;
         });
-
-        html += `</ul>`;
+        
+        html += `
+                </div>
+            </div>
+        </div>
+        `;
     } else {
         console.error(`Aucune province trouvée pour la région ${regionName}`);
     }
+
     // Normaliser le nom pour la recherche dans le JSON
-const econKey = regionName.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
-const econ = economieRegionData[econKey];
+    const econKey = regionName.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+    const econ = economieRegionData[econKey];
 
 if (econ) {
     html += `
@@ -839,25 +879,57 @@ function onEachFeature(feature, layer) {
     const props = feature.properties;
     const regionName = props.name_2 || props.localnam_2 || 'Région inconnue';
     const normalizedName = normalizeRegionName(regionName);
+    
+    // Récupérer les provinces et les statistiques de la région (même logique que dans showRegionInfo)
+    const { provinces, stats } = getProvincesForRegion(normalizedName);
+    
+    // Récupérer le code de la région pour accéder aux données du fichier region_details.json
     const regionCode = regionCodeMapping[normalizedName];
-    const regionData = regionCode ? regionDetails[regionCode] : null;
+    const regionData = regionCode && regionDetails[regionCode] ? regionDetails[regionCode] : null;
+    
+    // Déterminer les valeurs à afficher (même logique que dans showRegionInfo)
+    // Pour la population, prioriser les statistiques calculées à partir des provinces
+    const populationValue = stats && stats.population ? stats.population : (regionData && regionData.population ? regionData.population : null);
+    
+    // Pour la superficie, utiliser uniquement les données du fichier region_details.json
+    const superficieValue = regionData && regionData.superficie ? regionData.superficie : null;
+    
+    // Pour la densité, recalculer en fonction de la population et de la superficie
+    const densiteValue = populationValue && superficieValue ? Math.round(populationValue / superficieValue) : (regionData && regionData.densite ? regionData.densite : null);
+    
+    // Pour le chef-lieu, prioriser les données du fichier region_details.json
+    const chefLieuValue = regionData && regionData.chef_lieu ? regionData.chef_lieu : (stats && stats.chef_lieu ? stats.chef_lieu : null);
+    
+    // Formater les valeurs pour l'affichage
+    const population = populationValue ? populationValue.toLocaleString() : 'Non dispo';
+    const superficie = superficieValue ? superficieValue.toLocaleString() : 'Non dispo';
+    const densite = densiteValue ? densiteValue.toLocaleString() : 'Non dispo';
+    const chefLieu = chefLieuValue || 'Non dispo';
 
-    // Récupération des données à afficher
-    const population = regionData?.population?.toLocaleString() || 'Non dispo';
-    const superficie = regionData?.superficie?.toLocaleString() || 'Non dispo';
-    const chefLieu = regionData?.chef_lieu || 'Non dispo';
-
+    // Créer un contenu d'infobulle amélioré
     const tooltipContent = `
-        <strong>${normalizedName}</strong><br>
-        Population : ${population}<br>
-        Superficie : ${superficie} km²<br>
-        Chef-lieu : ${chefLieu}
+        <div class="enhanced-tooltip">
+            <div class="tooltip-header">${normalizedName}</div>
+            <div class="tooltip-data">
+                <div class="tooltip-row">
+                    <span class="tooltip-label">Population:</span>
+                    <span class="tooltip-value">${population} hab.</span>
+                </div>
+                <div class="tooltip-row">
+                    <span class="tooltip-label">Superficie:</span>
+                    <span class="tooltip-value">${superficie} km²</span>
+                </div>
+                <div class="tooltip-row">
+                    <span class="tooltip-label">Densité:</span>
+                    <span class="tooltip-value">${densite} hab/km²</span>
+                </div>
+                <div class="tooltip-row">
+                    <span class="tooltip-label">Chef-lieu:</span>
+                    <span class="tooltip-value">${chefLieu}</span>
+                </div>
+            </div>
+        </div>
     `;
-    console.log("🟡 REGION NAME:", regionName);
-console.log("🟢 NORMALIZED NAME:", normalizedName);
-console.log("🔵 REGION CODE:", regionCode);
-console.log("🟣 REGION DATA:", regionData);
-
 
     layer.bindTooltip(tooltipContent, {
         sticky: true,
@@ -946,6 +1018,132 @@ function loadProvinces(regionName) {
             provincesLayer = L.geoJSON(data, {
                 style: style,
                 onEachFeature: function(feature, layer) {
+                    // Ajouter des infobulles améliorées pour les provinces
+                    const props = feature.properties;
+                    
+                    // Détection plus robuste du nom de la province
+                    let provinceName = 'Province';
+                    
+                    // Parcourir toutes les propriétés pour trouver celle qui contient le nom
+                    for (const key in props) {
+                        // Rechercher des clés qui pourraient contenir le nom de la province
+                        if (key.toLowerCase().includes('name') ||
+                            key.toLowerCase().includes('nom') ||
+                            key.toLowerCase().includes('province') ||
+                            key.toLowerCase() === 'id_2') {
+                            if (props[key] && typeof props[key] === 'string') {
+                                provinceName = props[key];
+                                break;
+                            }
+                        }
+                    }
+                    
+                    // Si aucun nom n'a été trouvé, essayer d'utiliser d'autres propriétés
+                    if (provinceName === 'Province') {
+                        provinceName = props.name_2 || props.localnam_2 || props.NAME_2 || 
+                                       props.name || props.Province || props.NAME ||
+                                       'Province';
+                    }
+                    
+                    // Normaliser le nom de la province pour la recherche dans le fichier JSON
+                    const normalizedName = normalizeProvinceName(provinceName);
+                    
+                    // Recherche des données de la province dans le fichier JSON
+                    let provinceData = null;
+                    let matchedName = null;
+                    
+                    // Essayer de trouver une correspondance exacte ou partielle dans provinceDetails
+                    for (const key in provinceDetails) {
+                        const normalizedKey = normalizeProvinceName(key);
+                        
+                        // Correspondance exacte
+                        if (normalizedKey === normalizedName) {
+                            provinceData = provinceDetails[key];
+                            matchedName = key;
+                            break;
+                        }
+                        
+                        // Correspondance partielle (le nom de la province contient la clé ou vice versa)
+                        if (normalizedName.includes(normalizedKey) || normalizedKey.includes(normalizedName)) {
+                            provinceData = provinceDetails[key];
+                            matchedName = key;
+                            // Ne pas sortir de la boucle ici, continuer à chercher une correspondance exacte
+                        }
+                    }
+                    
+                    // Vérifications spéciales pour les provinces problématiques
+                    if (!provinceData) {
+                        // Cas spécial pour El-Kelâa-des-Sraghna
+                        if (provinceName.toLowerCase().includes("el kelaa") ||
+                            provinceName.toLowerCase().includes("kelaa") ||
+                            provinceName.toLowerCase().includes("kelâa")) {
+                            provinceData = provinceDetails["El-Kelâa-des--Sraghna"];
+                            matchedName = "El-Kelâa-des--Sraghna";
+                        }
+                        // Cas spécial pour Skhirate--Temara
+                        else if (provinceName.toLowerCase().includes("skhirate") ||
+                                provinceName.toLowerCase().includes("skhirat") ||
+                                provinceName.toLowerCase().includes("temara")) {
+                            provinceData = provinceDetails["Skhirate--Temara"];
+                            matchedName = "Skhirate--Temara";
+                        }
+                        // Cas spécial pour Inezgane--Ait-Melloul
+                        else if (provinceName.toLowerCase().includes("inezgane") ||
+                                provinceName.toLowerCase().includes("ait melloul")) {
+                            provinceData = provinceDetails["Inezgane--Ait-Melloul"];
+                            matchedName = "Inezgane--Ait-Melloul";
+                        }
+                        // Cas spécial pour Chtouka--Ait-Baha
+                        else if (provinceName.toLowerCase().includes("chtouka") ||
+                                provinceName.toLowerCase().includes("ait baha")) {
+                            provinceData = provinceDetails["Chtouka--Ait-Baha"];
+                            matchedName = "Chtouka--Ait-Baha";
+                        }
+                    }
+                    
+                    // Utiliser le nom correspondant dans provinceDetails si disponible
+                    const displayName = matchedName || provinceName;
+                    
+                    // Récupération des données à afficher (exactement comme dans le panneau d'information)
+                    const population = provinceData?.population ? Number(provinceData.population).toLocaleString() : 'Non dispo';
+                    const superficie = provinceData?.superficie ? Number(provinceData.superficie).toLocaleString() : 'Non dispo';
+                    const chefLieu = provinceData?.chef_lieu || 'Non dispo';
+                    const densite = provinceData?.densite ? Number(provinceData.densite).toLocaleString() : 'Non dispo';
+
+                    // Créer un contenu d'infobulle amélioré
+                    const tooltipContent = `
+                        <div class="enhanced-tooltip">
+                            <div class="tooltip-header">${displayName}</div>
+                            <div class="tooltip-data">
+                                <div class="tooltip-row">
+                                    <span class="tooltip-label">Population:</span>
+                                    <span class="tooltip-value">${population} hab.</span>
+                                </div>
+                                <div class="tooltip-row">
+                                    <span class="tooltip-label">Superficie:</span>
+                                    <span class="tooltip-value">${superficie} km²</span>
+                                </div>
+                                <div class="tooltip-row">
+                                    <span class="tooltip-label">Densité:</span>
+                                    <span class="tooltip-value">${densite} hab/km²</span>
+                                </div>
+                                <div class="tooltip-row">
+                                    <span class="tooltip-label">Chef-lieu:</span>
+                                    <span class="tooltip-value">${chefLieu}</span>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+
+                    layer.bindTooltip(tooltipContent, {
+                        sticky: true,
+                        direction: 'top',
+                        offset: [0, -10],
+                        opacity: 0.9,
+                        className: 'custom-tooltip'
+                    });
+                    
+                    // Gérer les événements de la couche
                     layer.on({
                         mouseover: highlightFeature,
                         mouseout: resetHighlight,

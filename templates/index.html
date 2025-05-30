@@ -8,35 +8,133 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/weather.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Carte Interactive du Maroc</h1>
-            <p>Cliquez sur une région pour obtenir plus d'informations</p>
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-map-marked-alt"></i>
+                </div>
+                <div class="title-container">
+                    <h1>Carte Interactive du Maroc</h1>
+                    <p>Explorez les régions et provinces du Royaume</p>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li class="nav-item active"><a href="#"><i class="fas fa-map"></i> Carte</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="dropdown-toggle"><i class="fas fa-chart-bar"></i> Statistiques <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" id="population-stats"><i class="fas fa-users"></i> Démographie</a></li>
+                            <li><a href="#" id="economic-stats"><i class="fas fa-money-bill-wave"></i> Économie</a></li>
+                            <li><a href="#" id="education-stats"><i class="fas fa-graduation-cap"></i> Éducation</a></li>
+                            <li><a href="#" id="climate-stats"><i class="fas fa-cloud-sun"></i> Climat</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="#" id="about-link"><i class="fas fa-info-circle"></i> À propos</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button id="search-toggle" class="header-button" title="Rechercher">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button id="theme-toggle" class="header-button" title="Changer de thème">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
         </header>
+        
+        <!-- Barre de recherche -->
+        <div id="search-bar" class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Rechercher une région ou une province...">
+                <button id="search-button"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
         
         <div class="content">
             <div id="map"></div>
-            <div id="info-panel">
-                <h2>Informations sur la région</h2>
-                <div id="region-info">
-    <p>Sélectionnez une région sur la carte pour afficher ses informations.</p>
-    <div id="region-graph-container" style="margin-top: 20px;">
-        <canvas id="regionChart" width="400" height="300"></canvas>
-    </div>
-</div>
-
-<!-- 🆕 Separate container for province charts -->
-<div id="province-chart-container" style="margin-top: 20px;"></div>
-
-
+            
+            <!-- Contrôles de carte -->
+            <div class="map-controls">
+                <button id="heatmap-toggle" class="map-control-button" title="Carte de densité de population">
+                    <i class="fas fa-fire"></i>
+                </button>
+                <button id="uv-toggle" class="map-control-button" title="Indice UV">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button id="fullscreen-toggle" class="map-control-button" title="Plein écran">
+                    <i class="fas fa-expand"></i>
+                </button>
+            </div>
+            
+            <!-- Légendes -->
+            <div id="heatmap-legend" class="map-legend">
+                <div class="legend-title">Densité de population</div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: blue;"></div>
+                    <span>Faible</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: purple;"></div>
+                    <span>Moyenne</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: red;"></div>
+                    <span>Élevée</span>
                 </div>
             </div>
+            
+            <div id="uv-legend" class="map-legend">
+                <div class="legend-title">Indice UV</div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: green;"></div>
+                    <span>Faible (1-2)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: yellow;"></div>
+                    <span>Modéré (3-5)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: orange;"></div>
+                    <span>Élevé (6-7)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: red;"></div>
+                    <span>Très élevé (8-10)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: purple;"></div>
+                    <span>Extrême (11+)</span>
+                </div>
+            </div>
+            
+            <!-- Panneau d'information -->
+            <div id="info-panel">
+                <div class="panel-handle"></div>
+                <h2>
+                    Informations sur la région
+                    <button id="close-panel" class="close-button d-md-none">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </h2>
+                <div id="region-info">
+                    <p>Sélectionnez une région sur la carte pour afficher ses informations.</p>
+                    <div id="region-graph-container" style="margin-top: 20px;">
+                        <canvas id="regionChart" width="400" height="300"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bouton pour afficher le panneau sur mobile -->
+            <button id="panel-toggle" class="panel-toggle">
+                <i class="fas fa-info"></i>
+            </button>
         </div>
         
         <footer>
@@ -49,7 +147,12 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="{{ url_for('static', filename='js/charts.js') }}"></script>
     <script src="{{ url_for('static', filename='js/map.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/weather.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/region-provinces.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/search.js') }}"></script>
     <script src="{{ url_for('static', filename='js/province-fixes.js') }}"></script>
+    <!-- Ajout du script pour les contrôles d'interface utilisateur -->
+    <script src="{{ url_for('static', filename='js/ui-controls.js') }}"></script>
+    <!-- Ajout du script pour la gestion des provinces -->
+    <script src="{{ url_for('static', filename='js/region-provinces.js') }}"></script>
 </body>
 </html>

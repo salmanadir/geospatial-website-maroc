@@ -5,101 +5,1040 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', 'Arial', sans-serif;
     line-height: 1.6;
     color: #333;
     background-color: #f4f4f4;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
 }
 
 header {
     text-align: center;
-    margin-bottom: 20px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    background-color: #004d99;
+    color: white;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 24px;
+    margin-right: 15px;
+    color: #ffcc00;
+}
+
+.title-container {
+    text-align: left;
 }
 
 header h1 {
-    color: #2c3e50;
-    margin-bottom: 10px;
+    color: white;
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+header p {
+    margin: 0;
+    font-size: 0.8rem;
+    opacity: 0.9;
+}
+
+/* Navigation principale */
+.main-nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-item a {
+    color: white;
+    text-decoration: none;
+    padding: 0 20px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.nav-item a i {
+    margin-right: 8px;
+}
+
+.nav-item:hover > a, .nav-item.active > a {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Dropdown menu */
+.dropdown-toggle .fa-chevron-down {
+    margin-left: 5px;
+    font-size: 0.8rem;
+    transition: transform 0.3s;
+}
+
+.nav-item:hover .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    min-width: 200px;
+    border-radius: 0 0 4px 4px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s;
+    z-index: 1001;
+}
+
+.nav-item:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    display: block;
+}
+
+.dropdown-menu a {
+    color: #333;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    height: auto;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f5f5f5;
+}
+
+.dropdown-menu li:last-child a {
+    border-bottom: none;
+    border-radius: 0 0 4px 4px;
+}
+
+/* Styles pour la barre de recherche */
+.search-container {
+    background-color: #f0f0f0;
+    padding: 10px;
+    display: none;
+    transition: all 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.search-container.active {
+    display: block;
+}
+
+.search-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+}
+
+#search-input {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#search-input:focus {
+    border-color: #004d99;
+}
+
+#search-button {
+    background-color: #004d99;
+    color: white;
+    border: none;
+    padding: 0 15px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#search-button:hover {
+    background-color: #003d7a;
+}
+
+/* Styles pour les résultats de recherche */
+.search-results-container {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    max-width: 90%;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.search-results {
+    padding: 10px;
+}
+
+.search-category {
+    margin-bottom: 15px;
+}
+
+.search-category h4 {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0 0 8px 0;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.search-result-item {
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+.search-result-item:hover {
+    background-color: #f5f5f5;
+}
+
+.search-result-item i {
+    color: #004d99;
+    margin-right: 10px;
+}
+
+.search-result-item span {
+    flex: 1;
+}
+
+.search-result-item small {
+    color: #999;
+    font-size: 0.8rem;
+}
+
+/* Styles pour les notifications */
+.notification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 4px;
+    z-index: 2000;
+    transition: transform 0.3s;
+}
+
+.notification.active {
+    transform: translateX(-50%) translateY(0);
 }
 
 .content {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    flex: 1;
+    overflow: hidden;
 }
 
 #map {
-    height: 600px;
-    flex: 2;
-    min-width: 300px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    flex: 3;
+    border-radius: 0;
+    box-shadow: none;
+    z-index: 1;
 }
 
-
+/* Styles pour le panneau d'information */
 #info-panel {
-    flex: 1;
-    min-width: 250px;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 380px;
+    height: 100%;
+    background-color: #f9f9f9;
+    box-shadow: -3px 0 15px rgba(0, 0, 0, 0.15);
+    z-index: 999;
+    overflow-y: auto;
+    transition: transform 0.3s ease, width 0.3s ease;
+    transform: translateX(0);
+    border-left: 1px solid #e0e0e0;
+}
+
+#info-panel.collapsed {
+    transform: translateX(100%);
 }
 
 #info-panel h2 {
-    color: #2c3e50;
-    margin-bottom: 15px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #eee;
+    background-color: #004d99;
+    color: white;
+    margin: 0;
+    padding: 18px 20px;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 2;
 }
 
 #region-info {
-    line-height: 1.8;
+    padding: 20px;
 }
 
-.region-detail {
-    margin-bottom: 10px;
+/* Cartes d'information */
+.info-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    margin-bottom: 20px;
+    overflow: hidden;
 }
 
-.region-detail strong {
-    font-weight: bold;
-    color: #2c3e50;
-}
-.leaflet-tooltip.custom-tooltip {
-    background-color: rgba(255, 255, 255, 0.9);
+.info-card-header {
+    background-color: #f0f0f0;
+    padding: 12px 15px;
+    border-bottom: 1px solid #e0e0e0;
+    font-weight: 600;
     color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.info-card-header i {
+    margin-right: 10px;
+    color: #004d99;
+}
+
+.info-card-body {
+    padding: 15px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.info-item {
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.info-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.info-item-label {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.info-item-value {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #004d99;
+}
+
+/* Style pour les détails de région et province */
+.region-detail, .province-detail {
+    margin-bottom: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.region-detail strong, .province-detail strong {
+    font-weight: 600;
+    color: #004d99;
+    display: block;
+    margin-bottom: 3px;
+}
+
+/* Style pour les sections de données */
+.data-section {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.data-section-title {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.data-section-title i {
+    margin-right: 8px;
+}
+/* Styles pour les infobulles améliorées */
+/* Style pour les tooltips */
+.custom-tooltip {
+    background-color: rgba(255, 255, 255, 0.95);
+    border: none;
+    border-radius: 8px;
+    padding: 0;
     font-size: 13px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 5px 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    box-shadow: 0 3px 14px rgba(0, 0, 0, 0.3);
+    max-width: 300px !important;
+    width: auto !important;
+}
+
+.enhanced-tooltip {
+    width: 100%;
+}
+
+.tooltip-header {
+    background-color: #004d99;
+    color: white;
+    padding: 8px 12px;
+    font-weight: bold;
+    border-radius: 6px 6px 0 0;
+    font-size: 14px;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip-data {
+    padding: 8px 12px;
+}
+
+.tooltip-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+
+.tooltip-label {
+    font-weight: 500;
+    color: #555;
+}
+
+.tooltip-value {
+    font-weight: 600;
+    color: #004d99;
 }
 
 
 footer {
     text-align: center;
-    margin-top: 30px;
-    padding: 20px;
+    padding: 10px;
     background-color: #2c3e50;
     color: #fff;
-    border-radius: 5px;
+    font-size: 0.8rem;
+    z-index: 1000;
 }
 
+/* Styles pour les contrôles de carte */
+.map-controls {
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.map-control-button {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.map-control-button:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+}
+
+.map-control-button.active {
+    background-color: #2c3e50;
+    color: white;
+}
+
+/* Styles pour les légendes */
+.map-legend {
+    position: absolute;
+    bottom: 30px;
+    left: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    max-width: 200px;
+    font-size: 0.85rem;
+    display: none;
+}
+
+.map-legend.visible {
+    display: block;
+}
+
+.legend-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3px;
+}
+
+.legend-color {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+    border-radius: 2px;
+}
+
+/* Styles pour le panneau mobile */
+.panel-toggle {
+    display: none;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+/* Media queries pour la responsivité */
 @media (max-width: 768px) {
     .content {
         flex-direction: column;
     }
     
+    #info-panel {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        max-width: 100%;
+        height: 50%;
+        transform: translateY(100%);
+        border-radius: 15px 15px 0 0;
+        padding-top: 30px;
+    }
+    
+    #info-panel.visible {
+        transform: translateY(0);
+    }
+    
+    .panel-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .panel-handle {
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 5px;
+        background-color: #ddd;
+        border-radius: 10px;
+    }
+}
+
+/* Styles pour les boutons d'en-tête */
+.header-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.header-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.close-button {
+    background: none;
+    border: none;
+    color: #2c3e50;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Styles pour le thème sombre */
+body.dark-theme {
+    background-color: var(--bg-color, #1a1a1a);
+    color: var(--text-color, #f0f0f0);
+}
+
+/* Correction des styles mobiles */
+@media (max-width: 768px) {
     #map {
         height: 400px;
     }
+    
+    .header-content h1 {
+        font-size: 1.2rem;
+    }
+    
+    .header-content p {
+        font-size: 0.8rem;
+    }
+}
+
+/* Styles pour la liste déroulante des provinces */
+.provinces-section {
+    margin-top: 20px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.dropdown-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    background-color: #f5f5f5;
+    cursor: pointer;
+    margin: 0;
+    font-size: 1rem;
+    color: #2c3e50;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-header:hover {
+    background-color: #e9e9e9;
+}
+
+.dropdown-header i {
+    transition: transform 0.3s ease;
+}
+
+.dropdown-header.active i {
+    transform: rotate(180deg);
+}
+
+.provinces-list {
+    max-height: 300px;
+    overflow-y: auto;
+    transition: max-height 0.3s ease-in-out;
+}
+
+.province-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    border-top: 1px solid #eee;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.province-item:hover {
+    background-color: #f0f0f0;
+}
+
+.province-name {
+    font-weight: 500;
+}
+
+.province-population {
+    color: #666;
+}
+
+/* Styles pour les provinces */
+.info-card-header {
+    position: relative;
+}
+
+.toggle-provinces {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    padding: 5px;
+    transition: all 0.3s;
+}
+
+.toggle-provinces:hover {
+    color: #004d99;
+}
+
+.toggle-provinces i {
+    transition: transform 0.3s;
+}
+
+.toggle-provinces.active i {
+    transform: rotate(180deg);
+}
+
+/* Styles pour le dropdown des provinces */
+.dropdown-header {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+.dropdown-header:hover {
+    background-color: #f5f5f5;
+}
+
+#provinces-dropdown-icon {
+    transition: transform 0.3s;
+}
+
+.dropdown-header.active #provinces-dropdown-icon {
+    transform: rotate(180deg);
+}
+
+.provinces-dropdown {
+    max-height: 0;
+    overflow-y: hidden;
+    transition: max-height 0.4s ease-in-out;
+    will-change: max-height;
+    background-color: #f9f9f9;
+}
+
+.province-card {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+.province-card:hover {
+    background-color: #eef2f8;
+}
+
+.province-info {
+    flex: 1;
+}
+
+.province-name {
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.province-stats {
+    display: flex;
+    gap: 15px;
+}
+
+.province-stat {
+    color: #666;
+    font-size: 0.85rem;
+}
+
+.province-stat i {
+    color: #004d99;
+    margin-right: 4px;
+}
+
+.province-action {
+    display: flex;
+    align-items: center;
+}
+
+.view-province-btn {
+    background: none;
+    border: none;
+    color: #004d99;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.view-province-btn:hover {
+    background-color: rgba(0, 77, 153, 0.1);
+}
+
+.provinces-footer {
+    padding: 12px 15px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
+.province-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.2s;
+    cursor: pointer;
+}
+
+.province-item:last-child {
+    border-bottom: none;
+}
+
+.province-item:hover {
+    background-color: #eef2f8;
+}
+
+.province-population {
+    font-size: 0.9rem;
+    color: #666;
+    white-space: nowrap;
+}
+
+.show-all-btn {
+    background-color: #004d99;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.show-all-btn i {
+    margin-right: 8px;
+}
+
+.show-all-btn:hover {
+    background-color: #003d7a;
+}
+
+/* Styles pour la fenêtre modale */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 800px;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(-20px);
+    transition: transform 0.3s;
+    overflow: hidden;
+}
+
+.modal.active .modal-content {
+    transform: translateY(0);
+}
+
+.modal-header {
+    background-color: #004d99;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.modal-close:hover {
+    transform: scale(1.1);
+}
+
+.modal-body {
+    padding: 20px;
+    overflow-y: auto;
+    max-height: calc(80vh - 60px);
+}
+
+.provinces-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.province-modal-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.province-modal-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.province-modal-name {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.province-modal-stats {
+    margin-bottom: 15px;
+}
+
+.province-modal-stat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.province-modal-stat i {
+    color: #004d99;
+    margin-right: 8px;
+}
+
+.view-province-details-btn {
+    background-color: #004d99;
+    color: white;
+    border: none;
+    padding: 8px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: auto;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.view-province-details-btn i {
+    margin-right: 5px;
+}
+
+.view-province-details-btn:hover {
+    background-color: #003d7a;
 }
