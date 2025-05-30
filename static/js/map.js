@@ -853,6 +853,21 @@ if (energie) {
 
     // Afficher les informations dans le panneau latéral
     document.getElementById('region-info').innerHTML = html;
+    // grab the header and panel you just injected
+    const hdr = document.getElementById('provinces-dropdown-header');
+    const panel = document.getElementById('provinces-dropdown');
+
+    // toggle the “active” class (for the chevron rotation)
+    // and animate max-height
+    hdr.addEventListener('click', () => {
+      hdr.classList.toggle('active');
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = '';
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+      }
+    });
+
     
     // Créer et afficher le graphique des provinces pour cette région
     if (provinces && provinces.length > 0) {
