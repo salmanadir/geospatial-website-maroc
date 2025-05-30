@@ -812,11 +812,26 @@ if (energie) {
 
 
     // Afficher les informations dans le panneau latéral
- document.getElementById('region-info').innerHTML = html;
-
-
-
-
+    document.getElementById('region-info').innerHTML = html;
+    
+    // Créer et afficher le graphique des provinces pour cette région
+    if (provinces && provinces.length > 0) {
+        // Ajouter à nouveau le conteneur pour le graphique qui a été remplacé par innerHTML
+        const graphContainer = document.createElement('div');
+        graphContainer.id = 'region-graph-container';
+        graphContainer.style.marginTop = '20px';
+        
+        const canvas = document.createElement('canvas');
+        canvas.id = 'regionChart';
+        canvas.width = 400;
+        canvas.height = 300;
+        
+        graphContainer.appendChild(canvas);
+        document.getElementById('region-info').appendChild(graphContainer);
+        
+        // Créer le graphique avec les données des provinces
+        createRegionChart(provinces, regionName);
+    }
 }
 
 // Fonction pour gérer les interactions avec chaque région
@@ -1173,8 +1188,13 @@ function showRegions() {
     // Masquer le bouton de retour
     document.getElementById('back-to-regions').style.display = 'none';
 
-    // Effacer les informations affichées
-    document.getElementById('region-info').innerHTML = '<p>Sélectionnez une région pour voir ses informations</p>';
+    // Effacer les informations affichées et cacher le graphique
+    document.getElementById('region-info').innerHTML = '<p>Sélectionnez une région sur la carte pour afficher ses informations.</p>';
+    
+    // Si la fonction hideRegionChart existe (définie dans charts.js), l'appeler
+    if (typeof hideRegionChart === 'function') {
+        hideRegionChart();
+    }
 }
 
 // Fonction pour charger les régions
