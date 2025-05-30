@@ -33,7 +33,7 @@
                             <li><a href="#" id="population-stats"><i class="fas fa-users"></i> Démographie</a></li>
                             <li><a href="#" id="economic-stats"><i class="fas fa-money-bill-wave"></i> Économie</a></li>
                             <li><a href="#" id="education-stats"><i class="fas fa-graduation-cap"></i> Éducation</a></li>
-                            <li><a href="#" id="climate-stats"><i class="fas fa-cloud-sun"></i> Climat</a></li>
+                            <li><a href="#" id="climate-stats"><i class="fas fa-cloud-sun"></i> Énergie</a></li>
                         </ul>
                     </li>
                     <li class="nav-item"><a href="#" id="about-link"><i class="fas fa-info-circle"></i> À propos</a></li>
@@ -148,11 +148,13 @@
     <script src="{{ url_for('static', filename='js/charts.js') }}"></script>
     <script src="{{ url_for('static', filename='js/map.js') }}"></script>
     <script src="{{ url_for('static', filename='js/weather.js') }}"></script>
+    <script src="/static/js/stats-controls.js"></script>
+     <!-- Ajout du script pour les contrôles d'interface utilisateur -->
+    <script src="{{ url_for('static', filename='js/ui-controls.js') }}"></script>
     <script src="{{ url_for('static', filename='js/region-provinces.js') }}"></script>
     <script src="{{ url_for('static', filename='js/search.js') }}"></script>
     <script src="{{ url_for('static', filename='js/province-fixes.js') }}"></script>
-    <!-- Ajout du script pour les contrôles d'interface utilisateur -->
-    <script src="{{ url_for('static', filename='js/ui-controls.js') }}"></script>
+
     <!-- Ajout du script pour la gestion des provinces -->
     <script src="{{ url_for('static', filename='js/region-provinces.js') }}"></script>
 

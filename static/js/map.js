@@ -704,9 +704,12 @@ function selectRegion(e) {
     // Charger les provinces de la région sélectionnée
     const properties = e.target.feature.properties;
     const regionName = properties.name_2 || properties.localnam_2;
+    currentRegionName = regionName;
     if (regionName) {
         loadProvinces(regionName);
     }
+    const normalized = normalizeRegionName(regionName);
+  window.currentRegionName = normalized;
 }
 
 // Fonction pour afficher les informations d'une région
